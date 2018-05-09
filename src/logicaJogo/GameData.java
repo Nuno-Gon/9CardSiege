@@ -24,8 +24,11 @@ public class GameData implements Serializable {
 	// ACTION Points
 	private int sabotagePoints;
 	private int moralePoints;
+	private int coupurePoints;
 	private int circleAttackPoints;
 	private int batRamAttackPoints;
+	private int siegeTowerAttackPoints;
+	private int attackPoints;
 
 	// ARRAY of Action Calls
 	private int[] actionCalls;
@@ -35,13 +38,27 @@ public class GameData implements Serializable {
 	public GameData() {
 		day = 1;
 		
+		// INICIALIZE of Enemy Track Card
+		left_ladder = 4;
+		mid_ram = 4;
+		right_siege = 4;
+		trebuchet = 3;
+		
+		// INICIALIZE of Status Track Card
 		left_wall = 4;
 		mid_morale = 4;
 		right_supplies = 4;
+		tunnel = 0;
+		supplies = 0;
+		
+		// INICIALIZE of Action Points
 		sabotagePoints = 0;
 		moralePoints = 0;
+		coupurePoints = 0;
 		circleAttackPoints = 0;
 		batRamAttackPoints = 0;
+		siegeTowerAttackPoints = 0;
+		attackPoints = 0;
 		
 		actionCalls = new int[8];
 		for(int i = 0 ; i < 8; i++)
@@ -54,6 +71,26 @@ public class GameData implements Serializable {
 	}
 	
 	
+	public int getCoupurePoints() {
+		return coupurePoints;
+	}
+
+
+	public void setCoupurePoints(int coupurePoints) {
+		this.coupurePoints = coupurePoints;
+	}
+
+
+	public int getAttackPoints() {
+		return attackPoints;
+	}
+
+
+	public void setAttackPoints(int attackPoints) {
+		this.attackPoints = attackPoints;
+	}
+
+
 	public int getBatRamAttackPoints() {
 		return batRamAttackPoints;
 	}
@@ -149,6 +186,10 @@ public class GameData implements Serializable {
 	public void setTrebuchet(int trebuchet) {
 		this.trebuchet = trebuchet;
 	}
+	
+	public void setTrebuchet_plus(int plus) {
+		this.trebuchet += plus;
+	}
 
 	public int getLeft_wall() {
 		return left_wall;
@@ -204,5 +245,15 @@ public class GameData implements Serializable {
 
 	public void setSupplies(int supplies) {
 		this.supplies = supplies;
+	}
+
+
+	public int getSiegeTowerAttackPoints() {
+		return siegeTowerAttackPoints;
+	}
+
+
+	public void setSiegeTowerAttackPoints(int siegeTowerAttackPoints) {
+		this.siegeTowerAttackPoints = siegeTowerAttackPoints;
 	}
 }
