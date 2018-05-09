@@ -73,6 +73,12 @@ public class GameData implements Serializable {
 		
 		cardsList = new ArrayList<>();
 		cardsList.add(new Cards(1, new E_TrebuchetAttack(3), new E_TrebuchetAttack(2), new E_TrebuchetAttack(1)));
+		cardsList.add(new Cards(2, new E_Illness(), new E_GuardsDistracted(), new E_TrebuchetAttack(1)));
+		cardsList.add(new Cards(3, new E_SuppliesSpoiled(), new E_BadWeather(), new E_BoilingOil()));
+		cardsList.add(new Cards(4, new E_DeathOfALeader(), new E_GateFortified(), new E_FlamingArrows()));
+		cardsList.add(new Cards(5, new E_VolleyOfArrows(), new E_Collapsed(), new E_RepairedTrebuchet()));
+		cardsList.add(new Cards(6, new E_CoverOfDarkness(), new E_EnemyFatigue(), new E_Rally()));
+		cardsList.add(new Cards(7, new E_DeterminedEnemy(), new E_IronShields(), new E_Faith()));
 		
 	}
 	
