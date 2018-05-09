@@ -11,4 +11,8 @@ public class E_SuppliesSpoiled extends Events implements Serializable {
 		this.enemyAdOrder[0] = 1;
 	}
 
+	@Override
+	public void action(GameData gameData) {
+		gameData.setRight_supplies_minus(1);
+	}
 }
