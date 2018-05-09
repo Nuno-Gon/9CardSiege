@@ -17,7 +17,7 @@ public class GameData implements Serializable {
 	// STATUS Track Card
 	private int left_wall;
 	private int mid_morale;
-	private int right_suplies;
+	private int right_supplies;
 	private int tunnel;
 	private int supplies;
 	
@@ -28,7 +28,7 @@ public class GameData implements Serializable {
 		
 		left_wall = 4;
 		mid_morale = 4;
-		right_suplies = 4;
+		right_supplies = 4;
 		
 		cardsList = new ArrayList<>();
 		cardsList.add(new Cards(1, new E_TrebuchetAttack(3), new E_TrebuchetAttack(2), new E_TrebuchetAttack(1)));
@@ -110,13 +110,21 @@ public class GameData implements Serializable {
 	public void setMid_morale(int mid_morale) {
 		this.mid_morale = mid_morale;
 	}
-
-	public int getRight_suplies() {
-		return right_suplies;
+	
+	public void setMid_morale_minus(int minus) {
+		this.mid_morale -= minus;
 	}
 
-	public void setRight_suplies(int right_suplies) {
-		this.right_suplies = right_suplies;
+	public int getRight_supplies() {
+		return right_supplies;
+	}
+
+	public void setRight_supplies(int right_supplies) {
+		this.right_supplies = right_supplies;
+	}
+	
+	public void setRight_supplies_minus(int minus) {
+		this.right_supplies -= minus;
 	}
 
 	public int getTunnel() {
