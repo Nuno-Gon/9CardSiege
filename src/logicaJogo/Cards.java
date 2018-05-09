@@ -32,4 +32,8 @@ public class Cards implements Serializable{
 	public void setNum(int num) {
 		this.num = num;
 	}
+	
+	public Events getEvents(int day){
+		return events.get(day-1);
+	}
 }
