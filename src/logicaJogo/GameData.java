@@ -21,6 +21,13 @@ public class GameData implements Serializable {
 	private int tunnel;
 	private int supplies;
 	
+	// ACTION Points
+	private int sabotagePoints;
+	private int moralePoints;
+	
+	// ARRAY of Action Calls
+	private int[] actionCalls;
+	
 	public List<Cards> cardsList;
 	
 	public GameData() {
@@ -29,12 +36,35 @@ public class GameData implements Serializable {
 		left_wall = 4;
 		mid_morale = 4;
 		right_supplies = 4;
+		sabotagePoints = 0;
+		moralePoints = 0;
+		
+		actionCalls = new int[8];
+		for(int i = 0 ; i < 8; i++)
+			actionCalls[i] = 1;
+		
 		
 		cardsList = new ArrayList<>();
 		cardsList.add(new Cards(1, new E_TrebuchetAttack(3), new E_TrebuchetAttack(2), new E_TrebuchetAttack(1)));
 		
 	}
 	
+	public int[] getActionCalls() {
+		return actionCalls;
+	}
+
+	public void setActionCalls(int[] actionCalls) {
+		this.actionCalls = actionCalls;
+	}
+
+	public int getMoralePoints() {
+		return moralePoints;
+	}
+
+	public void setMoralePoints(int moralePoints) {
+		this.moralePoints = moralePoints;
+	}
+
 	public int RollDice() {
 		return (int)(Math.random()*6) + 1;
 	}
@@ -53,6 +83,14 @@ public class GameData implements Serializable {
 
 	public void setDice(int dice) {
 		this.dice = dice;
+	}
+	
+	public int getSabotagePoints() {
+		return sabotagePoints;
+	}
+	
+	public void setSabotagePoints(int sabotagePoints) {
+		this.sabotagePoints = sabotagePoints;
 	}
 
 	public int getLeft_ladder() {
