@@ -10,5 +10,11 @@ public class E_GuardsDistracted extends Events implements Serializable {
 		this.enemyAdOrder = new int[1];
 		this.enemyAdOrder[0] = 4;
 	}
+	
+	@Override
+	public void action(GameData gameData) {
+		gameData.setSabotagePoints(1);
+		gameData.setMoralePoints(1);
+	}
 
 }
