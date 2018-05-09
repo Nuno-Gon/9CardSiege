@@ -25,10 +25,13 @@ public class GameData implements Serializable {
 	private int sabotagePoints;
 	private int moralePoints;
 	private int coupurePoints;
+	private int raidPoints;
 	private int circleAttackPoints;
+	private int ladderAttackPoints;
 	private int batRamAttackPoints;
 	private int siegeTowerAttackPoints;
 	private int attackPoints;
+	private int closeCombatPoints;
 
 	// ARRAY of Action Calls
 	private int[] actionCalls;
@@ -55,10 +58,13 @@ public class GameData implements Serializable {
 		sabotagePoints = 0;
 		moralePoints = 0;
 		coupurePoints = 0;
+		raidPoints = 0;
 		circleAttackPoints = 0;
+		ladderAttackPoints = 0;
 		batRamAttackPoints = 0;
 		siegeTowerAttackPoints = 0;
 		attackPoints = 0;
+		closeCombatPoints = 0;
 		
 		actionCalls = new int[8];
 		for(int i = 0 ; i < 8; i++)
@@ -71,6 +77,36 @@ public class GameData implements Serializable {
 	}
 	
 	
+	public int getLadderAttackPoints() {
+		return ladderAttackPoints;
+	}
+
+
+	public void setLadderAttackPoints(int ladderAttackPoints) {
+		this.ladderAttackPoints = ladderAttackPoints;
+	}
+
+
+	public int getCloseCombatPoints() {
+		return closeCombatPoints;
+	}
+
+
+	public void setCloseCombatPoints(int closeCombatPoints) {
+		this.closeCombatPoints = closeCombatPoints;
+	}
+
+
+	public int getRaidPoints() {
+		return raidPoints;
+	}
+
+
+	public void setRaidPoints(int raidPoints) {
+		this.raidPoints = raidPoints;
+	}
+
+
 	public int getCoupurePoints() {
 		return coupurePoints;
 	}
