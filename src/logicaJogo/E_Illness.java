@@ -12,5 +12,9 @@ public class E_Illness extends Events implements Serializable {
 		this.enemyAdOrder[0] = 3;
 	}
 	
-	
+	@Override
+	public void action(GameData gameData) {
+		gameData.setMid_morale_minus(1);
+		gameData.setRight_suplies_minus(1);
+	}
 }

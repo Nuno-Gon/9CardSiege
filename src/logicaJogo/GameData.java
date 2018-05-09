@@ -110,6 +110,10 @@ public class GameData implements Serializable {
 	public void setMid_morale(int mid_morale) {
 		this.mid_morale = mid_morale;
 	}
+	
+	public void setMid_morale_minus(int minus) {
+		this.mid_morale -= minus;
+	}
 
 	public int getRight_suplies() {
 		return right_suplies;
@@ -117,6 +121,10 @@ public class GameData implements Serializable {
 
 	public void setRight_suplies(int right_suplies) {
 		this.right_suplies = right_suplies;
+	}
+	
+	public void setRight_suplies_minus(int minus) {
+		this.right_suplies -= minus;
 	}
 
 	public int getTunnel() {
