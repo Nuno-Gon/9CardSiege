@@ -24,7 +24,8 @@ public class GameData implements Serializable {
 	// ACTION Points
 	private int sabotagePoints;
 	private int moralePoints;
-	
+	private int circleAttackPoints;
+
 	// ARRAY of Action Calls
 	private int[] actionCalls;
 	
@@ -38,6 +39,7 @@ public class GameData implements Serializable {
 		right_supplies = 4;
 		sabotagePoints = 0;
 		moralePoints = 0;
+		circleAttackPoints = 0;
 		
 		actionCalls = new int[8];
 		for(int i = 0 ; i < 8; i++)
@@ -49,12 +51,23 @@ public class GameData implements Serializable {
 		
 	}
 	
+	
+	public int getCircleAttackPoints() {
+		return circleAttackPoints;
+	}
+
+	public void setCircleAttackPoints(int circleAttackPoints) {
+		this.circleAttackPoints = circleAttackPoints;
+	}
+
+
 	public int[] getActionCalls() {
 		return actionCalls;
 	}
 
 	public void setActionCalls(int[] actionCalls) {
-		this.actionCalls = actionCalls;
+		for(int action:actionCalls)
+			this.actionCalls[action] = 0;
 	}
 
 	public int getMoralePoints() {
