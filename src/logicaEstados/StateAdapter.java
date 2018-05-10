@@ -23,4 +23,9 @@ public class StateAdapter implements IStates, Serializable {
 	public IStates start(){
 		return this;
 	}
+	
+	@Override
+	public IStates lineCheck(int tunnel){
+		return this;
+	} 
 }

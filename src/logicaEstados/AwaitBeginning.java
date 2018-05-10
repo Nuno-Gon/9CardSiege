@@ -13,4 +13,10 @@ public class AwaitBeginning extends StateAdapter  {
 	    gameData.baralhaCartas();
 	    return new AwaitCardSelect(dataGame);
 	}
+	
+	@Override
+	public IStates lineCheck(int tunnel){
+		gameData.setTunnel(tunnel);
+		return this;
+	}
 }

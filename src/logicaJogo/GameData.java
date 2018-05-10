@@ -303,4 +303,8 @@ public class GameData implements Serializable {
 	public void baralhaCartas(){
 		Collections.shuffle(cardsList);
 	}
+	
+	public void lCheck(int tunnel){
+	
+	}
 }
