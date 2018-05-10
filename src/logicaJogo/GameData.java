@@ -298,4 +298,9 @@ public class GameData implements Serializable {
 	public void setSiegeTowerAttackPoints(int siegeTowerAttackPoints) {
 		this.siegeTowerAttackPoints = siegeTowerAttackPoints;
 	}
+	
+
+	public void baralhaCartas(){
+		Collections.shuffle(cardsList);
+	}
 }
