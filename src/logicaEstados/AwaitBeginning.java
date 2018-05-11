@@ -11,6 +11,7 @@ public class AwaitBeginning extends StateAdapter  {
 	@Override
 	public IStates start(){
 	    gameData.baralhaCartas();
+	    gameData.lCheck(gameData.getTunnel());
 	    return new AwaitCardSelect(dataGame);
 	}
 	
