@@ -7,6 +7,7 @@ public class GameData implements Serializable {
 	
 	private int day;
 	private int dice;
+	private int choice; // 0 - nada 1 - esquerda 2 - mid 3 - direita
 	
 	// ENEMY Track Card
 	private int left_ladder;
@@ -40,6 +41,7 @@ public class GameData implements Serializable {
 	
 	public GameData() {
 		day = 1;
+		choice = 0;
 		
 		// INICIALIZE of Enemy Track Card
 		left_ladder = 4;
@@ -83,6 +85,16 @@ public class GameData implements Serializable {
 	}
 	
 	
+	public int getChoice() {
+		return choice;
+	}
+
+
+	public void setChoice(int choice) {
+		this.choice = choice;
+	}
+
+
 	public int getLadderAttackPoints() {
 		return ladderAttackPoints;
 	}
@@ -204,6 +216,10 @@ public class GameData implements Serializable {
 	public void setLeft_ladder(int left_ladder) {
 		this.left_ladder = left_ladder;
 	}
+	
+	public void setLeft_ladder_minus(int minus) {
+		this.left_ladder -= minus;
+	}
 
 	public int getMid_ram() {
 		return mid_ram;
@@ -212,6 +228,10 @@ public class GameData implements Serializable {
 	public void setMid_ram(int mid_ram) {
 		this.mid_ram = mid_ram;
 	}
+	
+	public void setMid_ram_minus(int minus) {
+		this.mid_ram -= minus;
+	}
 
 	public int getRight_siege() {
 		return right_siege;
@@ -219,6 +239,10 @@ public class GameData implements Serializable {
 
 	public void setRight_siege(int right_siege) {
 		this.right_siege = right_siege;
+	}
+	
+	public void setRight_siege_minus(int minus) {
+		this.right_siege -= minus;
 	}
 
 	public int getTrebuchet() {
