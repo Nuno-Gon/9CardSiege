@@ -32,4 +32,8 @@ public class Game implements Serializable{
 	    public void setState(IStates state) {
 	        this.state = state;
 	    } 
+	    
+	    public void baralhaCartas(){
+	    	gameData.baralhaCartas();
+	    }
 }
