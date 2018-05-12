@@ -8,9 +8,9 @@ public class GameData implements Serializable {
 	private int day;
 	private int dice;
 	private int choice; // 0 - nada 1 - esquerda 2 - meio 3 - direita
-	private int actionP;
-	private int freeMovement;
-	private int additionalAP;
+	private int actionP; // action points
+	private int freeMovement; // inicia a 0, fica a 1 depois de usado
+	private int additionalAP; // inicia a 0, fica a 1 depois de usado
 	
 	// ENEMY Track Card
 	private int left_ladder;
@@ -47,7 +47,7 @@ public class GameData implements Serializable {
 		choice = 0;
 		actionP = 0;
 		freeMovement = 0;
-		additionalAP = 1;
+		additionalAP = 0;
 		
 		// INICIALIZE of Enemy Track Card
 		left_ladder = 4;
