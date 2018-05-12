@@ -7,7 +7,10 @@ public class GameData implements Serializable {
 	
 	private int day;
 	private int dice;
-	private int choice; // 0 - nada 1 - esquerda 2 - mid 3 - direita
+	private int choice; // 0 - nada 1 - esquerda 2 - meio 3 - direita
+	private int actionP;
+	private int freeMovement;
+	private int additionalAP;
 	
 	// ENEMY Track Card
 	private int left_ladder;
@@ -42,6 +45,9 @@ public class GameData implements Serializable {
 	public GameData() {
 		day = 1;
 		choice = 0;
+		actionP = 0;
+		freeMovement = 0;
+		additionalAP = 1;
 		
 		// INICIALIZE of Enemy Track Card
 		left_ladder = 4;
@@ -85,6 +91,44 @@ public class GameData implements Serializable {
 	}
 	
 	
+	public int getAdditionalAP() {
+		return additionalAP;
+	}
+
+
+	public void setAdditionalAP(int additionalAP) {
+		this.additionalAP = additionalAP;
+	}
+
+
+	public int getFreeMovement() {
+		return freeMovement;
+	}
+
+
+	public void setFreeMovement(int freeMovement) {
+		this.freeMovement = freeMovement;
+	}
+
+
+	public int getActionP() {
+		return actionP;
+	}
+
+
+	public void setActionP(int actionP) {
+		this.actionP = actionP;
+	}
+	
+	public void setActionP_minus(int minus) {
+		this.actionP -= minus;
+	}
+	
+	public void setActionP_plus(int plus) {
+		this.actionP += plus;
+	}
+
+
 	public int getChoice() {
 		return choice;
 	}
@@ -256,6 +300,10 @@ public class GameData implements Serializable {
 	public void setTrebuchet_plus(int plus) {
 		this.trebuchet += plus;
 	}
+	
+	public void setTrebuchet_minus(int minus) {
+		this.trebuchet -= minus;
+	}
 
 	public int getLeft_wall() {
 		return left_wall;
@@ -284,6 +332,10 @@ public class GameData implements Serializable {
 	public void setMid_morale_minus(int minus) {
 		this.mid_morale -= minus;
 	}
+	
+	public void setMid_morale_plus(int plus) {
+		this.mid_morale += plus;
+	}
 
 	public int getRight_supplies() {
 		return right_supplies;
@@ -296,6 +348,10 @@ public class GameData implements Serializable {
 	public void setRight_supplies_minus(int minus) {
 		this.right_supplies -= minus;
 	}
+	
+	public void setRight_supplies_plus(int plus) {
+		this.right_supplies += plus;
+	}
 
 	public int getTunnel() {
 		return tunnel;
@@ -303,6 +359,14 @@ public class GameData implements Serializable {
 
 	public void setTunnel(int tunnel) {
 		this.tunnel = tunnel;
+	}
+	
+	public void setTunnel_minus(int minus) {
+		this.tunnel -= minus;
+	}
+	
+	public void setTunnel_plus(int plus) {
+		this.tunnel += plus;
 	}
 
 	public int getSupplies() {
