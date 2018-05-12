@@ -10,7 +10,7 @@ public class PA_ArchersAttack extends PlayerActions implements Serializable {
 	@Override
 	public void action(GameData gameData) {
 		if(gameData.getChoice() == 1) {
-			gameData.setDice(gameData.RollDice() + gameData.getAttackPoints());
+			gameData.setDice(gameData.RollDice() + gameData.getAttackPoints() + gameData.getLadderAttackPoints());
 			if(gameData.getDice() >= 3) {
 				gameData.setLeft_ladder_minus(1);
 			}
