@@ -1,7 +1,7 @@
 package iu.texto;
 
 import logicaEstados.*;
-import logicaJogo.Game;
+import logicaJogo.*;
 import java.util.*;
 
 public class TextUserInterface {
@@ -22,8 +22,10 @@ public class TextUserInterface {
 				InputAwaitBeginning();
 			if(g.getState() instanceof AwaitEnemyLineCheck)
 				InputAwaitEnemyLineCheck();
-			if(g.getStat() instanceof AwaitCardSelection)
+			if(g.getState() instanceof AwaitCardSelection)
 				InputAwaitCardSelection();
+			if(g.getState() instanceof AwaitEventPhase)
+				InputAwaitEventPhase();
 		}
 	}
 	
@@ -48,22 +50,47 @@ public class TextUserInterface {
 	}
 	
 	public void InputAwaitEnemyLineCheck() {
-		boolean i = false;
-		boolean u = false;
+		boolean i = Boolean.FALSE;
+		boolean u = Boolean.FALSE;
 		g.ResolveLineCheck(i,u);
-		if(i == true) {
-			System.out.println("Perdeu os seus soldados na Enemy Line");
+		//System.out.println(i);
+		if(i == Boolean.TRUE) {
+			System.out.println("You lost your soldiers in the Enemy Line");
 		}
-		else if(u == true) {
-			System.out.println("Os seus soldados na Enemy Line conseguiram passar despercebidos");
+		else if(u == Boolean.TRUE) {
+			System.out.println("Your soldiers on the Enemy Line were undetected");
 			}
 			else {
-				System.out.println("Não tem soldados na Enemy Line");
+				System.out.println("You don't have any soldier on the Enemy Line");
 			}
 		g.ResolveAdvance();
 	}
 	
 	public void InputAwaitCardSelection() {
 		g.ResolveCard();
+	}
+	
+	public void InputAwaitEventPhase() {
+		System.out.print("Name: ");
+		System.out.println(g.getGameData().getEvAtual().evName);
+		System.out.print("Description: ");
+		System.out.println(g.getGameData().getEvAtual().event);
+		System.out.print("Action points: ");
+		System.out.println(g.getGameData().getEvAtual().evName);
+		System.out.print("Enemy Advancement Order(s): ");
+		for(int c = 0; c < g.getGameData().getEvAtual().enemyAdOrder.length ; c++) {
+			if(g.getGameData().getEvAtual().enemyAdOrder[c] == 0)
+				System.out.print("None");
+			if(g.getGameData().getEvAtual().enemyAdOrder[c] == 1)
+				System.out.print("Ladder\t");
+			if(g.getGameData().getEvAtual().enemyAdOrder[c] == 2)
+				System.out.print("Battering Ram\t");
+			if(g.getGameData().getEvAtual().enemyAdOrder[c] == 3)
+				System.out.print("Tower Siege\t");
+			if(g.getGameData().getEvAtual().enemyAdOrder[c] == 4)
+				System.out.print("Ladder\tBattering Ram\tTower Siege");
+		}
+		
+		
 	}
 }

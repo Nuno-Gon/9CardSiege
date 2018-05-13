@@ -2,7 +2,7 @@ package logicaJogo;
 
 import java.io.Serializable;
 
-abstract class Events implements Serializable {
+public abstract class Events implements Serializable {
 	public int actionPoints;
 	public String evName;
 	public String event;

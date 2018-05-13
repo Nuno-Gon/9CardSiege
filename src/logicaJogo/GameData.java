@@ -7,6 +7,7 @@ public class GameData implements Serializable {
 	
 	private int day;
 	private int dice;
+	public Events evAtual;
 	private int choice; // 0 - nada 1 - esquerda 2 - meio 3 - direita
 	private int actionP; // action points
 	private int freeMovement; // inicia a 0, fica a 1 depois de usado
@@ -91,6 +92,19 @@ public class GameData implements Serializable {
 	}
 	
 	
+	
+	public Events getEvAtual() {
+		return evAtual;
+	}
+
+
+
+	public void setEvAtual(Events evAtual) {
+		this.evAtual = evAtual;
+	}
+
+
+
 	public List<Cards> getCardsList() {
 		return cardsList;
 	}

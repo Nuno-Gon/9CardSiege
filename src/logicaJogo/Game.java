@@ -16,7 +16,7 @@ public class Game implements Serializable{
 			System.out.println("New Game");
 		}
 		
-		public GameData getDataGame() {
+		public GameData getGameData() {
 	        return gameData;
 	    }
 		
