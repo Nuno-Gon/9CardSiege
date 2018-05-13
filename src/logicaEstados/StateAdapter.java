@@ -38,4 +38,9 @@ public class StateAdapter implements IStates, Serializable {
 	public IStates resolveCard() {
 		return this;
 	}
+	
+	@Override
+	public IStates eventPhase() {
+		return this;
+	}
 }

@@ -12,4 +12,7 @@ public interface IStates {
     
 /***** CardSelection *****/
     IStates resolveCard();
+    
+/***** EventPhase *******/
+    IStates eventPhase();
 }
