@@ -91,6 +91,16 @@ public class GameData implements Serializable {
 	}
 	
 	
+	public List<Cards> getCardsList() {
+		return cardsList;
+	}
+
+
+	public void setCardsList(List<Cards> cardsList) {
+		this.cardsList = cardsList;
+	}
+
+
 	public int getAdditionalAP() {
 		return additionalAP;
 	}

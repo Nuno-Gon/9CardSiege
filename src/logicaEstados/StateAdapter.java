@@ -25,7 +25,17 @@ public class StateAdapter implements IStates, Serializable {
 	}
 	
 	@Override
-	public IStates lineCheck(int tunnel){
+	public IStates lineCheck(boolean i, boolean u){
 		return this;
 	} 
+	
+	@Override
+	public IStates advance() {
+		return this;
+	}
+	
+	@Override
+	public IStates resolveCard() {
+		return this;
+	}
 }

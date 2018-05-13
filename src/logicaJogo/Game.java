@@ -2,7 +2,6 @@ package logicaJogo;
 
 import java.io.Serializable;
 import java.util.*;
-
 import logicaEstados.*;
 
 public class Game implements Serializable{
@@ -33,7 +32,31 @@ public class Game implements Serializable{
 	        this.state = state;
 	    } 
 	    
-	    public void baralhaCartas(){
-	    	gameData.baralhaCartas();
+	    
+	    /**************************************************************************************************************/
+	    /**********************************                 ESTADOS                  **********************************/
+	    /**************************************************************************************************************/
+
+	    
+        /*********** AwaitBeginning *********/
+
+	    public void ResolveStart() {
+	    	setState(getState().start());
+	    }
+	    
+	    /********** AwaitEnemyLineCheck *********/
+	    
+	    public void ResolveLineCheck(boolean i, boolean u) {
+	    	setState(getState().lineCheck(i, u));
+	    }
+	    
+	    public void ResolveAdvance() {
+	    	setState(getState().advance());
+	    }
+	    
+	    /********* AwaitCardSelection *********/
+	    
+	    public void ResolveCard() {
+	    	setState(getState().resolveCard());
 	    }
 }

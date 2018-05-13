@@ -2,7 +2,7 @@ package logicaEstados;
 
 import logicaJogo.*;
 
-public class AwaitBeginning extends StateAdapter  {
+public class AwaitBeginning extends StateAdapter {
 
 	public AwaitBeginning(GameData gameData){
 	      super(gameData);
@@ -11,13 +11,13 @@ public class AwaitBeginning extends StateAdapter  {
 	@Override
 	public IStates start(){
 	    gameData.baralhaCartas();
-	    gameData.lCheck(gameData.getTunnel());
-	    return new AwaitCardSelect(dataGame);
+	    // gameData.lCheck(gameData.getTunnel());
+	    return new AwaitEnemyLineCheck(gameData);
 	}
 	
-	@Override
+	/* @Override
 	public IStates lineCheck(int tunnel){
 		gameData.setTunnel(tunnel);
 		return this;
-	}
+	} */
 }

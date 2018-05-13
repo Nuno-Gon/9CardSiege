@@ -5,5 +5,11 @@ public interface IStates {
 /***** AwaitBeginning  *****/  
     
     IStates start();
-    IStates lineCheck();
+    
+/***** EnemyLineCheck *****/
+    IStates lineCheck(boolean i, boolean u);
+    IStates advance();
+    
+/***** CardSelection *****/
+    IStates resolveCard();
 }
