@@ -16,5 +16,6 @@ public class E_Rally extends Events implements Serializable {
 	public void action(GameData gameData) {
 		gameData.setCloseCombatPoints(1);
 		gameData.setCircleAttackPoints(1);
+		gameData.setActionP(actionPoints);
 	}
 }

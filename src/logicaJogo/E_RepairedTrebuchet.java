@@ -17,6 +17,7 @@ public class E_RepairedTrebuchet extends Events implements Serializable {
 		if(gameData.getTrebuchet() < 3)
 			gameData.setTrebuchet_plus(1);
 		gameData.setCoupurePoints(1);
+		gameData.setActionP(actionPoints);
 	}
 
 }

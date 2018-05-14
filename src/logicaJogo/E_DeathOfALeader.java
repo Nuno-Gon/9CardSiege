@@ -15,5 +15,6 @@ public class E_DeathOfALeader extends Events implements Serializable {
 	@Override
 	public void action(GameData gameData) {
 		gameData.setMid_morale_minus(1);
+		gameData.setActionP(actionPoints);
 	}
 }

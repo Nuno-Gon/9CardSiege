@@ -14,6 +14,7 @@ public class E_DeterminedEnemy extends Events implements Serializable {
 	@Override
 	public void action(GameData gameData) {
 		gameData.setBatRamAttackPoints(-1);
+		gameData.setActionP(actionPoints);
 	}
 
 }

@@ -15,5 +15,6 @@ public class E_GateFortified extends Events implements Serializable {
 	@Override
 	public void action(GameData gameData) {
 		gameData.setBatRamAttackPoints(1);
+		gameData.setActionP(actionPoints);
 	}
 }

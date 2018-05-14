@@ -15,6 +15,7 @@ public class E_GuardsDistracted extends Events implements Serializable {
 	public void action(GameData gameData) {
 		gameData.setSabotagePoints(1);
 		gameData.setMoralePoints(1);
+		gameData.setActionP(actionPoints);
 	}
 
 }

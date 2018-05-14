@@ -16,6 +16,7 @@ public class E_Collapsed extends Events implements Serializable {
 	public void action(GameData gameData) {
 		if(gameData.getRight_siege() == 4)
 			gameData.setRight_siege(5);
+		gameData.setActionP(actionPoints);
 	}
 
 }

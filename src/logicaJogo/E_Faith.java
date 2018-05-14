@@ -18,6 +18,7 @@ public class E_Faith extends Events implements Serializable {
 		gameData.setBatRamAttackPoints(1);
 		gameData.setLadderAttackPoints(1);
 		gameData.setMoralePoints(1);
+		gameData.setActionP(actionPoints);
 	}
 
 }

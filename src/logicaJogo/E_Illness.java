@@ -16,5 +16,6 @@ public class E_Illness extends Events implements Serializable {
 	public void action(GameData gameData) {
 		gameData.setMid_morale_minus(1);
 		gameData.setRight_supplies_minus(1);
+		gameData.setActionP(actionPoints);
 	}
 }

@@ -15,5 +15,6 @@ public class E_BoilingOil extends Events implements Serializable {
 	@Override
 	public void action(GameData gameData) {
 		gameData.setCircleAttackPoints(2);
+		gameData.setActionP(actionPoints);
 	}
 }

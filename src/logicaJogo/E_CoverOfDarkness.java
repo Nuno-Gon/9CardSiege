@@ -15,6 +15,7 @@ public class E_CoverOfDarkness extends Events implements Serializable {
 	public void action(GameData gameData) {
 		gameData.setRaidPoints(1);
 		gameData.setSabotagePoints(1);
+		gameData.setActionP(actionPoints);
 	}
 
 }

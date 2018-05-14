@@ -16,6 +16,7 @@ public class E_EnemyFatigue extends Events implements Serializable {
 		gameData.setCoupurePoints(1);
 		gameData.setRaidPoints(1);
 		gameData.setSabotagePoints(1);
+		gameData.setActionP(actionPoints);
 	}
 
 }

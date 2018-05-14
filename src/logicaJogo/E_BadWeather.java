@@ -14,6 +14,7 @@ public class E_BadWeather extends Events implements Serializable {
 	@Override
 	public void action(GameData gameData) {
 		gameData.setActionCalls(new int[] {1,2,3,4,5,6});
+		gameData.setActionP(actionPoints);
 	}
 
 }

@@ -26,6 +26,8 @@ public class TextUserInterface {
 				InputAwaitCardSelection();
 			if(g.getState() instanceof AwaitEventPhase)
 				InputAwaitEventPhase();
+			if(g.getState() instanceof AwaitEnemyMovement)
+				InputAwaitEnemyMovement();
 			if(g.getState() instanceof AwaitPlayerActions)
 				InputAwaitPlayerActions();
 			if(g.getState() instanceof AwaitWinOrLossCheck)
@@ -59,7 +61,6 @@ public class TextUserInterface {
 		boolean i = Boolean.FALSE;
 		boolean u = Boolean.FALSE;
 		g.ResolveLineCheck(i,u);
-		//System.out.println(i);
 		if(i == Boolean.TRUE) {
 			System.out.println("You lost your soldiers in the Enemy Line");
 		}
@@ -101,6 +102,10 @@ public class TextUserInterface {
 		g.EventPhase();
 	}
 	
+	public void InputAwaitEnemyMovement() {
+		g.EnemyMovement();
+	}
+	
 	public void InputAwaitPlayerActions() {
 		
 		System.out.println("Enemy Track Card:");
@@ -110,13 +115,26 @@ public class TextUserInterface {
 		System.out.println("Trebuchets: " + g.getGameData().getTrebuchet());
 		
 		System.out.println("Status Track Card:");
-		System.out.println("Wall" + g.getGameData().getLeft_wall());
+		System.out.println("Wall: " + g.getGameData().getLeft_wall());
 		System.out.println("Morale: " + g.getGameData().getMid_morale());
 		System.out.println("Supplies: " + g.getGameData().getRight_supplies());
 		System.out.println("Tunnel position: " + g.getGameData().getTunnel());
 		System.out.println("Supplies Raided: " + g.getGameData().getSupplies());
 		
 		for(int v = 0; v < g.getGameData().getActionP() ; v++) {
+			int linha = 0;
+			int escolha = 0;
+			if((g.getGameData().getLeft_ladder() == 0 && g.getGameData().getMid_ram() == 0) || (g.getGameData().getLeft_ladder() == 0 && g.getGameData().getRight_siege() == 0) || (g.getGameData().getMid_ram() == 0 && g.getGameData().getRight_siege() == 0)) {
+				System.out.println("There are 2 enemies on the Close Combat Space! You have to fight them!");
+				System.out.print("Choose the lane you want to attack: ");
+				linha = sc.nextInt();
+				g.getGameData().setChoice(linha);
+				g.PlayerActions(3);
+				if(g.getGameData().isChange() == true) {
+					System.out.println(g.getGameData().getText());
+				}
+				continue;
+			}
 			System.out.println("Choose the action you want to do:");
 			System.out.println("1 - Archers Attack");
 			System.out.println("2 - Boiling Water Attack");
@@ -127,22 +145,32 @@ public class TextUserInterface {
 			System.out.println("7 - Supply Raid");
 			System.out.println("8 - Sabotage");
 			System.out.println("9 - Additional Player Action Points");
+		
+			escolha = sc.nextInt();
+		
+			if(checkLimits(1,9,escolha)) {
+				if(escolha == 1 || escolha == 2 || escolha == 3) {
+					System.out.print("Choose the lane to attack: ");
+					linha = sc.nextInt();
+					g.getGameData().setChoice(linha);
+					g.PlayerActions(escolha);
+					if(g.getGameData().isChange() == true) {
+						System.out.println(g.getGameData().getText());
+						v--;
+						System.out.println("Chose another option");
+					}
+				}
+				else {
+					g.PlayerActions(escolha);
+					if(g.getGameData().isWrongOption() == true) {
+						System.out.println(g.getGameData().getText());
+						v--;
+					}
+				}
+			}
 		}
-		
-		int escolha = sc.nextInt();
-		
-		if(checkLimits(1,9,escolha)) {
-			if(escolha == 1 || escolha == )
-			g.PlayerActions(escolha);
-			if(g.getGameData().isFullSupps() == true) {
-				System.out.println("You have the supplies full");
-			}
-			if(g.getGameData().isNoSoldiers() == true) {
-				System.out.println("You have no soldiers on the Enemy Line");
-			}
 			
-			g.NextState();
-		}
+		g.NextState();
 		
 	}
 	

@@ -14,5 +14,6 @@ public class E_VolleyOfArrows extends Events implements Serializable {
 	@Override
 	public void action(GameData gameData) {
 		gameData.setAttackPoints(1);
+		gameData.setActionP(actionPoints);
 	}
 }

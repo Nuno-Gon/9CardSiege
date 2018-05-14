@@ -14,5 +14,6 @@ public class E_FlamingArrows extends Events implements Serializable {
 	@Override
 	public void action(GameData gameData) {
 		gameData.setSiegeTowerAttackPoints(1);
+		gameData.setActionP(actionPoints);
 	}
 }

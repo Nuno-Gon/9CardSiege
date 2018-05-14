@@ -18,14 +18,15 @@ public class E_TrebuchetAttack extends Events implements Serializable {
 		if(gameData.getTrebuchet() == 3) {
 			gameData.setLeft_wall_minus(2);
 		}
-		if(gameData.getTrebuchet() == 2) {
+		else if(gameData.getTrebuchet() == 2) {
 			gameData.setLeft_wall_minus(1);
 		}
-		if(gameData.getTrebuchet() == 1) {
+		else if(gameData.getTrebuchet() == 1) {
 			gameData.setDice(gameData.RollDice());
 			if(gameData.getDice() == 4 || gameData.getDice() == 5 || gameData.getDice() == 6) {
 				gameData.setLeft_wall_minus(1);
 			}
 		}
+		gameData.setActionP(actionPoints);
 	}
 }
