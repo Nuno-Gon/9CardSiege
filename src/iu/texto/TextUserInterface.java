@@ -26,6 +26,10 @@ public class TextUserInterface {
 				InputAwaitCardSelection();
 			if(g.getState() instanceof AwaitEventPhase)
 				InputAwaitEventPhase();
+			if(g.getState() instanceof AwaitPlayerActions)
+				InputAwaitPlayerActions();
+			if(g.getState() instanceof AwaitWinOrLossCheck)
+				InputAwaitWinOrLossCheck();
 		}
 	}
 	
@@ -95,7 +99,7 @@ public class TextUserInterface {
 		g.EventPhase();
 	}
 	
-	public InputAwaitPlayerAction() {
+	public void InputAwaitPlayerActions() {
 		
 		for(int v = 0; v < g.getGameData().getActionP() ; v++) {
 			System.out.println("Choose the action you want to do:");
@@ -107,15 +111,27 @@ public class TextUserInterface {
 			System.out.println("6 - Tunnel Movement");
 			System.out.println("7 - Supply Raid");
 			System.out.println("8 - Sabotage");
+			System.out.println("9 - Additional Player Action Points");
 		}
 		
 		int escolha = sc.nextInt();
 		
-		if(checkLimits(1,8,escolha)) {
-			if(escolha == 1) {
-				g.playerActions(1);
-			}
+		if(checkLimits(1,9,escolha)) {
+			g.PlayerActions(escolha);
 		}
+		
+	}
+	
+	public void InputAwaitWinOrLossCheck(){
+		boolean wl = Boolean.FALSE;
+		int escolhaf = 0;
+		
+		g.WinOrLossCheck(wl);
+		if(wl==Boolean.TRUE){
+			System.out.println("You lost!");
+			System.exit(0);
+		}
+		
 		
 	}
 }

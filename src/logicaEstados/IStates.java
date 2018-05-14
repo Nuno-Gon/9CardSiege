@@ -17,5 +17,11 @@ public interface IStates {
     IStates eventPhase();
     
 /****** EnemyMovement *****/
-    IStates enemyMovementPhase();
+    IStates enemyMovement();
+    
+/****** PlayerActions *****/
+    IStates playerActions(int escolha);
+    
+/****** WinOrLossCheck *****/
+    IStates winOrLossCheck(boolean wl);
 }

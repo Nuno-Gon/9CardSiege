@@ -43,6 +43,7 @@ public class GameData implements Serializable {
 	private int[] actionCalls;
 	
 	public List<Cards> cardsList;
+	public List<PlayerActions> actionsList;
 	
 	public GameData() {
 		day = 1;
@@ -90,10 +91,32 @@ public class GameData implements Serializable {
 		cardsList.add(new Cards(6, new E_CoverOfDarkness(), new E_EnemyFatigue(), new E_Rally()));
 		cardsList.add(new Cards(7, new E_DeterminedEnemy(), new E_IronShields(), new E_Faith()));
 		
+		actionsList = new ArrayList<>();
+		actionsList.add(new PA_ArchersAttack());
+		actionsList.add(new PA_BoilingWaterAttack());
+		actionsList.add(new PA_CloseCombatAttack());
+		actionsList.add(new PA_Coupure());
+		actionsList.add(new PA_RallyTroops());
+		actionsList.add(new PA_TunnelMovement());
+		actionsList.add(new PA_SupplyRaid());
+		actionsList.add(new PA_Sabotage());
+		actionsList.add(new PA_AdditionalActionPoints());
 	}
 	
 	
 	
+	public List<PlayerActions> getActionsList() {
+		return actionsList;
+	}
+
+
+
+	public void setActionsList(List<PlayerActions> actionsList) {
+		this.actionsList = actionsList;
+	}
+
+
+
 	public PlayerActions getAction() {
 		return action;
 	}

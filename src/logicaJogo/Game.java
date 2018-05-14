@@ -68,7 +68,18 @@ public class Game implements Serializable{
 	    
 	    /******** AwaitEnemyMovePhase ******/
 	    
-	    public void EnemyMovementPhase() {
-	    	setState(getState().enemyMovementPhase());
+	    public void EnemyMovement() {
+	    	setState(getState().enemyMovement());
+	    }
+	    
+	    /******* AwaitPlayerActions ******/
+	    
+	    public void PlayerActions(int escolha) {
+	    	setState(getState().playerActions(escolha));
+	    }
+	    
+	    /****** AwaitWinOrLossCheck ******/
+	    public void WinOrLossCheck(boolean wl) {
+	    	setState(getState().winOrLossCheck(wl));
 	    }
 }

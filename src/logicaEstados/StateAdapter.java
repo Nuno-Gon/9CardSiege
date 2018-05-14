@@ -45,7 +45,17 @@ public class StateAdapter implements IStates, Serializable {
 	}
 	
 	@Override
-	public IStates enemyMovementPhase() {
+	public IStates enemyMovement() {
+		return this;
+	}
+	
+	@Override
+	public IStates playerActions(int escolha) {
+		return this;
+	}
+	
+	@Override
+	public IStates winOrLossCheck() {
 		return this;
 	}
 }

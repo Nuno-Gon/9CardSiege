@@ -1,17 +1,17 @@
 package logicaEstados;
 import logicaJogo.*;
 
-public class AwaitEnemyMovementPhase extends StateAdapter {
+public class AwaitEnemyMovement extends StateAdapter {
 
-	public AwaitEnemyMovementPhase(GameData gameData) {
+	public AwaitEnemyMovement(GameData gameData) {
 		super(gameData);
 	}
 	
 	@Override
-	public IStates enemyMovementPhase() {
+	public IStates enemyMovement() {
 		for(int c = 0; c < gameData.getEvAtual().enemyAdOrder.length ; c++) {
 			if(gameData.getEvAtual().enemyAdOrder[c] == 0)
-				return new AwaitPlayerActions(gameData);
+				break;
 			if(gameData.getEvAtual().enemyAdOrder[c] == 1)
 				gameData.setLeft_ladder_minus(1);
 			if(gameData.getEvAtual().enemyAdOrder[c] == 2)
@@ -24,5 +24,7 @@ public class AwaitEnemyMovementPhase extends StateAdapter {
 				gameData.setRight_siege_minus(1);
 			}
 		}
+		
+		return new AwaitPlayerActions(gameData);
 	}
 }

@@ -9,9 +9,10 @@ public class AwaitPlayerActions extends StateAdapter {
 	
 	@Override
 	public IStates playerActions(int escolha) {
-		if(escolha == 1) {
-			gameData.
-		}
+		gameData.setAction(gameData.getActionsList().get(escolha-1));	
+		gameData.getAction().action(gameData);
+		
+		return new AwaitWinOrLossCheck(gameData);
 	}
 
 }
