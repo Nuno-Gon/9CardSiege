@@ -13,6 +13,8 @@ public class GameData implements Serializable {
 	private int actionP; // action points
 	private int freeMovement; // inicia a 0, fica a 1 depois de usado
 	private int additionalAP; // inicia a 0, fica a 1 depois de usado
+	private boolean fullSupps; // boolean de supplies cheios ou não
+	private boolean noSoldiers; // boolean se tem soldados na enenmy line ou não
 	
 	// ENEMY Track Card
 	private int left_ladder;
@@ -51,6 +53,8 @@ public class GameData implements Serializable {
 		actionP = 0;
 		freeMovement = 0;
 		additionalAP = 0;
+		fullSupps = false;
+		noSoldiers = false;
 		
 		// INICIALIZE of Enemy Track Card
 		left_ladder = 4;
@@ -92,7 +96,7 @@ public class GameData implements Serializable {
 		cardsList.add(new Cards(7, new E_DeterminedEnemy(), new E_IronShields(), new E_Faith()));
 		
 		actionsList = new ArrayList<>();
-		actionsList.add(new PA_ArchersAttack());
+		actionsList.add(new PA_ArchersAttack(int choice));
 		actionsList.add(new PA_BoilingWaterAttack());
 		actionsList.add(new PA_CloseCombatAttack());
 		actionsList.add(new PA_Coupure());
@@ -105,6 +109,30 @@ public class GameData implements Serializable {
 	
 	
 	
+	public boolean isFullSupps() {
+		return fullSupps;
+	}
+
+
+
+	public void setFullSupps(boolean fullSupps) {
+		this.fullSupps = fullSupps;
+	}
+
+
+
+	public boolean isNoSoldiers() {
+		return noSoldiers;
+	}
+
+
+
+	public void setNoSoldiers(boolean noSoldiers) {
+		this.noSoldiers = noSoldiers;
+	}
+
+
+
 	public List<PlayerActions> getActionsList() {
 		return actionsList;
 	}

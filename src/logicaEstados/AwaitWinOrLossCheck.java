@@ -17,6 +17,6 @@ public class AwaitWinOrLossCheck extends StateAdapter {
 			wl = Boolean.TRUE;
 			return this;
 		}
-		if()
+		return new AwaitEndOfDay();
 	}
 }

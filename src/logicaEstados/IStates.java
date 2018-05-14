@@ -21,7 +21,11 @@ public interface IStates {
     
 /****** PlayerActions *****/
     IStates playerActions(int escolha);
+    IStates nextState();
     
 /****** WinOrLossCheck *****/
     IStates winOrLossCheck(boolean wl);
+    
+/****** EndOfDay *****/
+    IStates endOfDay();
 }

@@ -78,8 +78,17 @@ public class Game implements Serializable{
 	    	setState(getState().playerActions(escolha));
 	    }
 	    
+	    public void NextState() {
+	    	setState(getState().nextState());
+	    }
+	    
 	    /****** AwaitWinOrLossCheck ******/
 	    public void WinOrLossCheck(boolean wl) {
 	    	setState(getState().winOrLossCheck(wl));
+	    }
+	    
+	    /****** AwaitEndOfDay ******/
+	    public void EndOfDay() {
+	    	setState(getState().endOfDay());
 	    }
 }

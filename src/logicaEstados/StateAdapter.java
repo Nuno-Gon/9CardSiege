@@ -55,7 +55,12 @@ public class StateAdapter implements IStates, Serializable {
 	}
 	
 	@Override
-	public IStates winOrLossCheck() {
+	public IStates winOrLossCheck(boolean wl) {
+		return this;
+	}
+	
+	@Override
+	public IStates endOfDay() {
 		return this;
 	}
 }

@@ -9,7 +9,9 @@ public class PA_CloseCombatAttack extends PlayerActions implements Serializable 
 	
 	@Override
 	public void action(GameData gameData) {
-		
+		if(gameData.getLeft_ladder() == 0) {
+			
+		}
 	}
 
 }

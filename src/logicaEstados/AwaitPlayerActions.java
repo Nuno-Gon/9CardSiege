@@ -12,6 +12,11 @@ public class AwaitPlayerActions extends StateAdapter {
 		gameData.setAction(gameData.getActionsList().get(escolha-1));	
 		gameData.getAction().action(gameData);
 		
+		return this;
+	}
+	
+	@Override
+	public IStates nextState() {
 		return new AwaitWinOrLossCheck(gameData);
 	}
 

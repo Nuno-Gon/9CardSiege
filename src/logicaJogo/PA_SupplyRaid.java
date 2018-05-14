@@ -24,12 +24,12 @@ public class PA_SupplyRaid extends PlayerActions implements Serializable {
 				}
 			}
 			else {
-				// aviso de que não pode levar mais supplies
+				gameData.setFullSupps() = true;
 			}
 		}
 		else {
 			
-			// aviso de que não tem soldados na enemy line
+			gameData.setNoSoldiers() = true;
 		}
 	}
 
