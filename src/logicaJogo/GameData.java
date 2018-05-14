@@ -8,6 +8,7 @@ public class GameData implements Serializable {
 	private int day;
 	private int dice;
 	public Events evAtual;
+	public PlayerActions action;
 	private int choice; // 0 - nada 1 - esquerda 2 - meio 3 - direita
 	private int actionP; // action points
 	private int freeMovement; // inicia a 0, fica a 1 depois de usado
@@ -93,6 +94,18 @@ public class GameData implements Serializable {
 	
 	
 	
+	public PlayerActions getAction() {
+		return action;
+	}
+
+
+
+	public void setAction(PlayerActions action) {
+		this.action = action;
+	}
+
+
+
 	public Events getEvAtual() {
 		return evAtual;
 	}
@@ -289,6 +302,10 @@ public class GameData implements Serializable {
 		this.left_ladder -= minus;
 	}
 
+	public void setLeft_ladder_plus(int plus) {
+		this.left_ladder += plus;
+	}
+	
 	public int getMid_ram() {
 		return mid_ram;
 	}
@@ -299,6 +316,10 @@ public class GameData implements Serializable {
 	
 	public void setMid_ram_minus(int minus) {
 		this.mid_ram -= minus;
+	}
+	
+	public void setMid_ram_plus(int plus) {
+		this.mid_ram += plus;
 	}
 
 	public int getRight_siege() {
@@ -311,6 +332,10 @@ public class GameData implements Serializable {
 	
 	public void setRight_siege_minus(int minus) {
 		this.right_siege -= minus;
+	}
+	
+	public void setRight_siege_plus(int plus) {
+		this.right_siege += plus;
 	}
 
 	public int getTrebuchet() {

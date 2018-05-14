@@ -10,7 +10,7 @@ public class AwaitCardSelection extends StateAdapter {
 	@Override
 	public IStates resolveCard() {
 		gameData.setEvAtual(gameData.getCardsList().get(0).getEvents(gameData.getDay()));
-		return new AwaitEventPhase;
+		return new AwaitEventPhase(gameData);
 		
 		
 	}

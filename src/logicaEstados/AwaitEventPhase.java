@@ -7,4 +7,10 @@ public class AwaitEventPhase extends StateAdapter {
 		super(gameData);
 	}
 
+	@Override
+	public IStates eventPhase() {
+		gameData.getEvAtual().action(gameData);
+		return new AwaitEnemyMovementPhase(gameData);
+	}
+
 }

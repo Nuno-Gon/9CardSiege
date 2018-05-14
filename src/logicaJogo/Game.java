@@ -59,4 +59,16 @@ public class Game implements Serializable{
 	    public void ResolveCard() {
 	    	setState(getState().resolveCard());
 	    }
+	    
+	    /******** AwaitEventPhase **********/
+	    
+	    public void EventPhase() {
+	    	setState(getState().eventPhase());
+	    }
+	    
+	    /******** AwaitEnemyMovePhase ******/
+	    
+	    public void EnemyMovementPhase() {
+	    	setState(getState().enemyMovementPhase());
+	    }
 }

@@ -13,6 +13,9 @@ public interface IStates {
 /***** CardSelection *****/
     IStates resolveCard();
     
-/***** EventPhase *******/
+/****** EventPhase *******/
     IStates eventPhase();
+    
+/****** EnemyMovement *****/
+    IStates enemyMovementPhase();
 }

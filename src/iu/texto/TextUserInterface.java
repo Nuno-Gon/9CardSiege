@@ -76,7 +76,7 @@ public class TextUserInterface {
 		System.out.print("Description: ");
 		System.out.println(g.getGameData().getEvAtual().event);
 		System.out.print("Action points: ");
-		System.out.println(g.getGameData().getEvAtual().evName);
+		System.out.println(g.getGameData().getEvAtual().actionPoints);
 		System.out.print("Enemy Advancement Order(s): ");
 		for(int c = 0; c < g.getGameData().getEvAtual().enemyAdOrder.length ; c++) {
 			if(g.getGameData().getEvAtual().enemyAdOrder[c] == 0)
@@ -90,7 +90,32 @@ public class TextUserInterface {
 			if(g.getGameData().getEvAtual().enemyAdOrder[c] == 4)
 				System.out.print("Ladder\tBattering Ram\tTower Siege");
 		}
+		System.out.println("");
 		
+		g.EventPhase();
+	}
+	
+	public InputAwaitPlayerAction() {
+		
+		for(int v = 0; v < g.getGameData().getActionP() ; v++) {
+			System.out.println("Choose the action you want to do:");
+			System.out.println("1 - Archers Attack");
+			System.out.println("2 - Boiling Water Attack");
+			System.out.println("3 - Close Combat Attack");
+			System.out.println("4 - Coupure");
+			System.out.println("5 - Rally Troops");
+			System.out.println("6 - Tunnel Movement");
+			System.out.println("7 - Supply Raid");
+			System.out.println("8 - Sabotage");
+		}
+		
+		int escolha = sc.nextInt();
+		
+		if(checkLimits(1,8,escolha)) {
+			if(escolha == 1) {
+				g.playerActions(1);
+			}
+		}
 		
 	}
 }
