@@ -120,8 +120,8 @@ public class TextUserInterface {
 		System.out.println("Supplies: " + g.getGameData().getRight_supplies());
 		System.out.println("Tunnel position: " + g.getGameData().getTunnel());
 		System.out.println("Supplies Raided: " + g.getGameData().getSupplies());
-		
-		for(int v = 0; v < g.getGameData().getActionP() ; v++) {
+		int v=0;
+		for( v=0 ; v < g.getGameData().getActionP() ; v++) {
 			int linha = 0;
 			int escolha = 0;
 			if((g.getGameData().getLeft_ladder() == 0 && g.getGameData().getMid_ram() == 0) || (g.getGameData().getLeft_ladder() == 0 && g.getGameData().getRight_siege() == 0) || (g.getGameData().getMid_ram() == 0 && g.getGameData().getRight_siege() == 0)) {
