@@ -20,7 +20,7 @@ public class PA_RallyTroops extends PlayerActions implements Serializable {
 			}
 			else if(gameData.getChoice() == 2) { // Gasta supplies para +1 DRM
 				gameData.setRight_supplies_minus(1);
-				gameData.setDice(gameData.RollDice() + gameData.getMoralePoints() +1);
+				gameData.setDice(gameData.RollDice() + gameData.getMoralePoints() + 1);
 				if(gameData.getDice() >= 5) {
 					gameData.setMid_morale_plus(1);
 					gameData.setText("You rolled an " + gameData.getDice() + ", you increased your morale");

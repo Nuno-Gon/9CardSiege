@@ -133,6 +133,7 @@ public class TextUserInterface {
 				if(g.getGameData().isChange() == true) {
 					System.out.println(g.getGameData().getText());
 				}
+				g.getGameData().setActionP_minus(1);
 				continue;
 			}
 			System.out.println("Choose the action you want to do:");
@@ -159,6 +160,21 @@ public class TextUserInterface {
 						v--;
 						System.out.println("Chose another option");
 					}
+					g.getGameData().setActionP_minus(1);
+				}
+				else if(escolha == 5) {
+					System.out.println("Do you want to spend a supply point to gain +1 DRM?");
+					System.out.println("1 - Yes");
+					System.out.println("2 - No");
+					linha = sc.nextInt();
+					g.getGameData().setChoice(linha);
+					g.PlayerActions(escolha);
+					if(g.getGameData().isChange() == true) {
+						System.out.println(g.getGameData().getText());
+						v--;
+						System.out.println("Chose another option");
+					}
+					g.getGameData().setActionP_minus(1);
 				}
 				else {
 					g.PlayerActions(escolha);
@@ -166,6 +182,7 @@ public class TextUserInterface {
 						System.out.println(g.getGameData().getText());
 						v--;
 					}
+					g.getGameData().setActionP_minus(1);
 				}
 			}
 		}
