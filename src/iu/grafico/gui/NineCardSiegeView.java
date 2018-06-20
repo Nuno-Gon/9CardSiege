@@ -1,5 +1,6 @@
 package iu.grafico.gui;
 
+
 import iu.grafico.ObservableGame;
 import logicaEstados.*;
 import logicaJogo.*;
@@ -34,7 +35,7 @@ public class NineCardSiegeView extends JFrame implements Observer{
 		panel = new NineCardSiegeGamePanel(game);
 		
 		addComponents();
-		//menu();
+		menu();
 		
 		setVisible(true);
 		this.setSize(1024,860);
@@ -51,6 +52,27 @@ public class NineCardSiegeView extends JFrame implements Observer{
         cp.setLayout(new BorderLayout());
         cp.add(panel,BorderLayout.CENTER);
     }
+	
+	private void menu(){
+
+	      JMenuBar menuBar = new JMenuBar();
+	      setJMenuBar(menuBar);
+
+	      JMenu gameMenu = new JMenu("Game");
+	      
+	      JMenuItem exitObjJMI = new JMenuItem("Exit");
+	      
+	      gameMenu.add(exitObjJMI);
+	      menuBar.add(gameMenu);
+	      
+	      exitObjJMI.addActionListener(new ActionListener(){
+	            @Override
+	            public void actionPerformed(ActionEvent e) {
+	                 JOptionPane.showMessageDialog(NineCardSiegeView.this, "Fechou o Jogo","Sair",JOptionPane.PLAIN_MESSAGE);
+	                 System.exit(0);
+	            }
+	        });
+	}
 	
 	@Override
     public void update(Observable o, Object arg) {
