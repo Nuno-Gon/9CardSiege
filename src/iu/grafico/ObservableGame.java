@@ -34,4 +34,40 @@ public class ObservableGame extends Observable{
         setChanged();
         notifyObservers();
     }
+	
+	public int getLadder(){
+        return game.getGameData().getLeft_ladder();
+    }
+	
+	public int getRam(){
+        return game.getGameData().getMid_ram();
+    }
+     
+    public int getSiege(){
+        return game.getGameData().getRight_siege();
+    }
+      
+    public int getTrincheiras(){
+        return game.getGameData().getTrebuchet();
+    }  
+    
+    public int getWall() {
+        return game.getGameData().getLeft_wall();
+    }
+
+    public int getMorale() {
+        return game.getGameData().getMid_morale();
+    }
+
+    public int getSupplies() {
+        return game.getGameData().getRight_supplies();
+    }
+
+    public int getTunnel() {
+        return game.getGameData().getTunnel();
+    }
+
+    public int getRaidSupplies() {
+        return game.getGameData().getSupplies();
+    }
 }

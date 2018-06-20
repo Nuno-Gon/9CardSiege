@@ -15,7 +15,7 @@ public class NineCardSiegeGamePanel extends JPanel implements Observer{
 	private ObservableGame game;
 	private StartOptionPanel startOptionPanel;
 	//EnemyTrackPanel enemyTrackPanel;
-	//StatusCardPanel statusCardPanel;
+	StatusCardPanel statusCardPanel;
 	//CardSelected cardSelected;
 	private JPanel pNorth, pCenter, pCenterLeft, pCenterRight, pSouth, pSouthLeft, pSouthCenter, pSouthRight, pWest, pEast;
 	private Image background;
@@ -29,9 +29,11 @@ public class NineCardSiegeGamePanel extends JPanel implements Observer{
 	
 	private void setupComponents(){
 		startOptionPanel = new StartOptionPanel(game);
-        
 		startOptionPanel.setPreferredSize(new Dimension(450,0));
-    }
+    
+		statusCardPanel = new StatusCardPanel(game);
+        statusCardPanel.setPreferredSize(new Dimension(450,0));
+	}
 	
 	private void setupLayout()
     {
@@ -57,7 +59,7 @@ public class NineCardSiegeGamePanel extends JPanel implements Observer{
        // pSouth.add(cards);
 
        	//pWest.add(enemyTracksPanel, BorderLayout.WEST);
-        //pEast.add(statusCardPanel, BorderLayout.EAST);
+        pEast.add(statusCardPanel, BorderLayout.EAST);
 
 
 
