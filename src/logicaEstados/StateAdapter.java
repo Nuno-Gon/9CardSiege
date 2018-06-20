@@ -177,7 +177,6 @@ public class StateAdapter implements IStates, Serializable {
 	@Override
 	public void quit() {
 		System.exit(0);
-		
 	}
 
 	@Override
