@@ -15,21 +15,27 @@ public class PA_SupplyRaid extends PlayerActions implements Serializable {
 				if(gameData.getDice() < 3) { // CAPTURE PROCEDURE
 					gameData.setTunnel(0);
 					gameData.setMid_morale_minus(1);
+					gameData.setText("You rolled an " + gameData.getDice() + ", you lost your soldiers on the enemy line");
+					gameData.setChange(true);
+					gameData.setActionP_minus(1);
 				}
 				if(gameData.getDice() >=3 && gameData.getDice() < 6) {
 					gameData.setSupplies(1);
+					gameData.setText("You rolled an " + gameData.getDice() + ", you successfully got one supply");
+					gameData.setChange(true);
+					gameData.setActionP_minus(1);
 				}
 				if(gameData.getDice() == 6) {
 					gameData.setSupplies(2);
+					gameData.setText("You rolled an " + gameData.getDice() + ", you successfully got two supplies");
+					gameData.setChange(true);
+					gameData.setActionP_minus(1);
 				}
-			}
-			else {
-				gameData.setFullSupps() = true;
 			}
 		}
 		else {
-			
-			gameData.setNoSoldiers() = true;
+			gameData.setText("You don't have soldiers on the enemy line");
+			gameData.setWrongOption(true);
 		}
 	}
 

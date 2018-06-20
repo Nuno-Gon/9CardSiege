@@ -15,10 +15,12 @@ public class PA_ArchersAttack extends PlayerActions implements Serializable {
 				gameData.setLeft_ladder_plus(1);
 				gameData.setText("You rolled an " + gameData.getDice() + ", you won the fight");
 				gameData.setChange(true);
+				gameData.setActionP_minus(1);
 			}
 			else {
 				gameData.setText("You rolled an " + gameData.getDice() + ", you lost the fight");
 				gameData.setChange(true);
+				gameData.setActionP_minus(1);
 			}
 		}
 		
@@ -28,10 +30,12 @@ public class PA_ArchersAttack extends PlayerActions implements Serializable {
 				gameData.setMid_ram_plus(1);
 				gameData.setText("You rolled an " + gameData.getDice() + ", you won the fight");
 				gameData.setChange(true);
+				gameData.setActionP_minus(1);
 			}
 			else {
 				gameData.setText("You rolled an " + gameData.getDice() + ", you lost the fight");
 				gameData.setChange(true);
+				gameData.setActionP_minus(1);
 			}
 		}
 		
@@ -41,10 +45,12 @@ public class PA_ArchersAttack extends PlayerActions implements Serializable {
 				gameData.setRight_siege_plus(1);
 				gameData.setText("You rolled an " + gameData.getDice() + ", you won the fight");
 				gameData.setChange(true);
+				gameData.setActionP_minus(1);
 			}
 			else {
 				gameData.setText("You rolled an " + gameData.getDice() + ", you lost the fight");
 				gameData.setChange(true);
+				gameData.setActionP_minus(1);
 			}
 		}
 		

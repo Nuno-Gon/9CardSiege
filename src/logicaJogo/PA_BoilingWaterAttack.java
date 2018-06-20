@@ -16,16 +16,19 @@ public class PA_BoilingWaterAttack extends PlayerActions implements Serializable
 					gameData.setLeft_ladder_minus(1);
 					gameData.setText("You rolled an " + gameData.getDice() + ", you won the fight");
 					gameData.setChange(true);
+					gameData.setActionP_minus(1);
 				}
 				else if (gameData.getDice() == 1) {
 					gameData.setMid_morale_minus(1);
 					gameData.setText("You rolled an " + gameData.getDice() + ", you lost 1 morale point");
 					gameData.setChange(true);
+					gameData.setActionP_minus(1);
 				}
 				
 				else {
 					gameData.setText("You rolled an " + gameData.getDice() + ", you lost the fight");
 					gameData.setChange(true);
+					gameData.setActionP_minus(1);
 				}
 				gameData.setActionCalls(new int[] {2});
 			}
@@ -36,16 +39,19 @@ public class PA_BoilingWaterAttack extends PlayerActions implements Serializable
 					gameData.setMid_ram_minus(1);
 					gameData.setText("You rolled an " + gameData.getDice() + ", you won the fight");
 					gameData.setChange(true);
+					gameData.setActionP_minus(1);
 				}
 				else if (gameData.getDice() == 1) {
 					gameData.setMid_morale_minus(1);
 					gameData.setText("You rolled an " + gameData.getDice() + ", you lost 1 morale point");
 					gameData.setChange(true);
+					gameData.setActionP_minus(1);
 				}
 				
 				else {
 					gameData.setText("You rolled an " + gameData.getDice() + ", you lost the fight");
 					gameData.setChange(true);
+					gameData.setActionP_minus(1);
 				}
 				gameData.setActionCalls(new int[] {2});
 			}
@@ -56,15 +62,18 @@ public class PA_BoilingWaterAttack extends PlayerActions implements Serializable
 					gameData.setRight_siege_minus(1);
 					gameData.setText("You rolled an " + gameData.getDice() + ", you won the fight");
 					gameData.setChange(true);
+					gameData.setActionP_minus(1);
 				}
 				else if (gameData.getDice() == 1) {
 					gameData.setMid_morale_minus(1);
 					gameData.setText("You rolled an " + gameData.getDice() + ", you lost 1 morale point");
 					gameData.setChange(true);
+					gameData.setActionP_minus(1);
 				}
 				else {
 					gameData.setText("You rolled an " + gameData.getDice() + ", you lost the fight");
 					gameData.setChange(true);
+					gameData.setActionP_minus(1);
 				}
 				
 				gameData.setActionCalls(new int[] {2});

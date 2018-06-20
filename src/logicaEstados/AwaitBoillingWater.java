@@ -1,9 +1,10 @@
 package logicaEstados;
+
 import logicaJogo.*;
 
-public class AwaitArchersAttack extends StateAdapter {
+public class AwaitBoillingWater extends StateAdapter {
 	
-	public AwaitArchersAttack(GameData gameData) {
+	public AwaitBoillingWater(GameData gameData) {
 		super(gameData);
 	}
 	
@@ -35,4 +36,5 @@ public class AwaitArchersAttack extends StateAdapter {
 	public IStates cancel() {
 		return new AwaitPlayerActions(gameData);
 	}
+
 }

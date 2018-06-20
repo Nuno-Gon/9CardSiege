@@ -69,6 +69,13 @@ public class AwaitPlayerActions extends StateAdapter {
 	}
 	
 	@Override
+	public IStates coupure() {
+		gameData.setAction(gameData.getActionsList().get(3));	
+		gameData.getAction().action(gameData);
+		return new AwaitWinOrLossCheck(gameData);
+	}
+	
+	@Override
 	public IStates rallyTroops() {
 		return new AwaitRallyTroops(gameData);
 	}

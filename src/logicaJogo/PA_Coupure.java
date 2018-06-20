@@ -15,6 +15,7 @@ public class PA_Coupure extends PlayerActions implements Serializable {
 				gameData.setLeft_wall_plus(1);
 				gameData.setText("You rolled an " + gameData.getDice() + ", you successfully increased your wall");
 				gameData.setChange(true);
+				gameData.setActionP_minus(1);
 			}
 		}
 		else {

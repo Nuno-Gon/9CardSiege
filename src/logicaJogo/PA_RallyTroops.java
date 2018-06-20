@@ -16,6 +16,7 @@ public class PA_RallyTroops extends PlayerActions implements Serializable {
 					gameData.setMid_morale_plus(1);
 					gameData.setText("You rolled an " + gameData.getDice() + ", you increased your morale");
 					gameData.setChange(true);
+					gameData.setActionP_minus(1);
 				}
 			}
 			else if(gameData.getChoice() == 2) { // Gasta supplies para +1 DRM
@@ -25,6 +26,7 @@ public class PA_RallyTroops extends PlayerActions implements Serializable {
 					gameData.setMid_morale_plus(1);
 					gameData.setText("You rolled an " + gameData.getDice() + ", you increased your morale");
 					gameData.setChange(true);
+					gameData.setActionP_minus(1);
 				}
 			}
 			else {

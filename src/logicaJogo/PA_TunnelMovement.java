@@ -32,16 +32,15 @@ public class PA_TunnelMovement extends PlayerActions implements Serializable {
 		}
 		
 		if(gameData.getTunnel() == 1) {
+			gameData.setActionP_minus(1);
 			if(gameData.getChoice() == 1) { // escolhe FAST MOVEMENT
 				if(gameData.getChoice() == 1) { // escolhe voltar ao castelo
 					gameData.setTunnel(0);
-					gameData.setActionP_minus(1);
 					gameData.setRight_supplies_plus(gameData.getSupplies());
 					gameData.setSupplies(0);
 				}
 				if(gameData.getChoice() == 2) { // escolhe ir para enemy line
 					gameData.setTunnel(3);
-					gameData.setActionP_minus(1);
 				}
 			}
 			if(gameData.getChoice() == 2) { // escolhe FREE MOVEMENT
@@ -57,16 +56,15 @@ public class PA_TunnelMovement extends PlayerActions implements Serializable {
 		}
 		
 		if(gameData.getTunnel() == 2) {
+			gameData.setActionP_minus(1);
 			if(gameData.getChoice() == 1) { // escolhe FAST MOVEMENT
 				if(gameData.getChoice() == 1) { // escolhe voltar ao castelo
 					gameData.setTunnel(0);
-					gameData.setActionP_minus(1);
 					gameData.setRight_supplies_plus(gameData.getSupplies());
 					gameData.setSupplies(0);
 				}
 				if(gameData.getChoice() == 2) { // escolhe ir para enemy line
 					gameData.setTunnel(3);
-					gameData.setActionP_minus(1);
 				}
 			}
 			if(gameData.getChoice() == 2) { // escolhe FREE MOVEMENT
