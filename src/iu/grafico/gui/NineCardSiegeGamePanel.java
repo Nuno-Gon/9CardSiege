@@ -8,15 +8,17 @@ import javax.swing.border.EmptyBorder;
 import javax.imageio.ImageIO;
 import java.io.IOException;
 import logicaJogo.*;
+import logicaEstados.AwaitBeginning;
 import logicaEstados.*;
 
 public class NineCardSiegeGamePanel extends JPanel implements Observer{
-	ObservableGame game;
-	StartOptionPanel startOptionPanel;
+	private ObservableGame game;
+	private StartOptionPanel startOptionPanel;
 	//EnemyTrackPanel enemyTrackPanel;
 	//StatusCardPanel statusCardPanel;
 	//CardSelected cardSelected;
-	JPanel pNorth, pCenter, pCenterLeft, pCenterRight, pSouth, pSouthLeft, pSouthCenter, pSouthRight, pWest, pEast;
+	private JPanel pNorth, pCenter, pCenterLeft, pCenterRight, pSouth, pSouthLeft, pSouthCenter, pSouthRight, pWest, pEast;
+	private Image background;
 	
 	public NineCardSiegeGamePanel(ObservableGame game){
 		this.game = game;
@@ -70,6 +72,8 @@ public class NineCardSiegeGamePanel extends JPanel implements Observer{
         //add(mainPanel, BorderLayout.CENTER);
        validate();
     }
+	
+	// Setup Panels
 	
 	private void setupNorth() {
         pNorth = new JPanel();
@@ -148,6 +152,41 @@ public class NineCardSiegeGamePanel extends JPanel implements Observer{
 
     }
 	
+    @Override
+    protected void paintComponent(Graphics g) {
+
+        super.paintComponent(g);
+
+        if(!(game.getState() instanceof AwaitBeginning))
+            g.drawImage(background, 0, 0, this);
+
+
+        if(game.getState() instanceof AwaitBeginning){
+
+            remove(pCenter);
+            add(startOptionPanel, BorderLayout.CENTER);
+
+            pNorth.setVisible(false);
+            pSouth.setVisible(false);
+            pEast.setVisible(false);
+            pWest.setVisible(false);
+            pCenter.setVisible(false);
+            startOptionPanel.setVisible(true);
+        }
+        else {
+            remove(startOptionPanel);
+
+            add(pCenter, BorderLayout.CENTER);
+
+            pNorth.setVisible(true);
+            pSouth.setVisible(true);;
+            pEast.setVisible(true);
+            pWest.setVisible(true);
+            pCenter.setVisible(true);
+            startOptionPanel.setVisible(false);
+        }
+    }
+    
 	@Override
     public void update(Observable o, Object arg) {
         setBackground(Color.blue);
