@@ -19,6 +19,9 @@ public interface IStates {
     IStates coupure();
     IStates rallyTroops();
     IStates tunnelMovement();
+    IStates supplyRaid();
+    IStates sabotage();
+    IStates additionalActionPoint();
     IStates nextState();
     
 /****** Archers Attack / Boilling Water / Close Combat *****/
@@ -28,6 +31,17 @@ public interface IStates {
     IStates cancel();
     
 /****** Rally Troops *******/
+    IStates normalRally();
+    IStates suppliesRally();
+    
+/****** Tunnel Movement ******/
+    IStates enterTunnelFree();
+    IStates enterTunnelFast();
+    IStates moveTunnelFreeCastle();
+    IStates moveTunnelFastCastle();
+    IStates moveTunnelFreeEnemyLine();
+    IStates moveTunnelFastEnemyLine();
+    
     
     
 /****** WinOrLossCheck *****/

@@ -11,6 +11,7 @@ public class GameData implements Serializable {
 	public PlayerActions action;
 	private Cards cardSelected;
 	private int choice; // 0 - nada 1 - esquerda 2 - meio 3 - direita
+	private int secondChoice;
 	private int actionP; // action points
 	private int freeMovement; // inicia a 0, fica a 1 depois de usado
 	private int additionalAP; // inicia a 0, fica a 1 depois de usado
@@ -52,6 +53,7 @@ public class GameData implements Serializable {
 	public GameData() {
 		day = 1;
 		choice = 0;
+		secondChoice = 0;
 		actionP = 0;
 		freeMovement = 0;
 		additionalAP = 0;
@@ -109,8 +111,18 @@ public class GameData implements Serializable {
 		actionsList.add(new PA_Sabotage());
 		actionsList.add(new PA_AdditionalActionPoints());
 	}
-	
-	
+
+	public int getSecondChoice() {
+		return secondChoice;
+	}
+
+
+
+	public void setSecondChoice(int secondChoice) {
+		this.secondChoice = secondChoice;
+	}
+
+
 
 	public Cards getCardSelected() {
 		return cardSelected;

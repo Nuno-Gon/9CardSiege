@@ -86,6 +86,27 @@ public class AwaitPlayerActions extends StateAdapter {
 	}
 	
 	@Override
+	public IStates supplyRaid() {
+		gameData.setAction(gameData.getActionsList().get(6));	
+		gameData.getAction().action(gameData);
+		return new AwaitWinOrLossCheck(gameData);
+	}
+	
+	@Override
+	public IStates sabotage() {
+		gameData.setAction(gameData.getActionsList().get(7));	
+		gameData.getAction().action(gameData);
+		return new AwaitWinOrLossCheck(gameData);
+	}
+	
+	@Override 
+		public IStates additionalActionPoint() {
+		gameData.setAction(gameData.getActionsList().get(8));	
+		gameData.getAction().action(gameData);
+		return new AwaitWinOrLossCheck(gameData);
+	}
+	
+	@Override
 	public IStates nextState() {
 		return new AwaitWinOrLossCheck(gameData);
 	}

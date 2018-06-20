@@ -17,6 +17,10 @@ public class PA_TunnelMovement extends PlayerActions implements Serializable {
 				gameData.setActionP_minus(1);
 				gameData.setTunnel(3);
 			}
+			else if(gameData.getChoice() == 2) {
+				gameData.setActionP_minus(1);
+				gameData.setTunnel(1);
+			}
 		}
 				
 		if(gameData.getTunnel() == 3) {
@@ -31,16 +35,17 @@ public class PA_TunnelMovement extends PlayerActions implements Serializable {
 			}
 		}
 		
-		if(gameData.getTunnel() == 1) {
-			gameData.setActionP_minus(1);
+		if(gameData.getTunnel() == 1) {			
 			if(gameData.getChoice() == 1) { // escolhe FAST MOVEMENT
-				if(gameData.getChoice() == 1) { // escolhe voltar ao castelo
+				if(gameData.getSecondChoice() == 1) { // escolhe voltar ao castelo
+					gameData.setActionP_minus(1);
 					gameData.setTunnel(0);
 					gameData.setRight_supplies_plus(gameData.getSupplies());
 					gameData.setSupplies(0);
 				}
 				if(gameData.getChoice() == 2) { // escolhe ir para enemy line
 					gameData.setTunnel(3);
+					gameData.setActionP_minus(1);
 				}
 			}
 			if(gameData.getChoice() == 2) { // escolhe FREE MOVEMENT
@@ -56,22 +61,23 @@ public class PA_TunnelMovement extends PlayerActions implements Serializable {
 		}
 		
 		if(gameData.getTunnel() == 2) {
-			gameData.setActionP_minus(1);
 			if(gameData.getChoice() == 1) { // escolhe FAST MOVEMENT
-				if(gameData.getChoice() == 1) { // escolhe voltar ao castelo
+				if(gameData.getSecondChoice() == 1) { // escolhe voltar ao castelo
 					gameData.setTunnel(0);
+					gameData.setActionP_minus(1);
 					gameData.setRight_supplies_plus(gameData.getSupplies());
 					gameData.setSupplies(0);
 				}
-				if(gameData.getChoice() == 2) { // escolhe ir para enemy line
+				if(gameData.getSecondChoice() == 2) { // escolhe ir para enemy line
 					gameData.setTunnel(3);
+					gameData.setActionP_minus(1);
 				}
 			}
 			if(gameData.getChoice() == 2) { // escolhe FREE MOVEMENT
-				if(gameData.getChoice() == 1) { // escolhe mover-se para o castelo
+				if(gameData.getSecondChoice() == 1) { // escolhe mover-se para o castelo
 					gameData.setTunnel_minus(1);
 				}
-				if(gameData.getChoice() == 2) { // escolhe mover se para a enemy line
+				if(gameData.getSecondChoice() == 2) { // escolhe mover se para a enemy line
 					gameData.setTunnel_plus(1);
 				}
 			}
