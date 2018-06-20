@@ -5,9 +5,9 @@ public interface IStates {
 /***** AwaitBeginning  *****/  
     
 	IStates start();
-    IStates lineCheck();
     
 /****** Top Card ******/
+	IStates lineCheck();
     IStates resolveCard();
     IStates eventPhase();
     IStates enemyMovement();
