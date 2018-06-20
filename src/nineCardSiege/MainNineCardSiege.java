@@ -1,12 +1,14 @@
 package nineCardSiege;
 
 import logicaJogo.*;
-import iu.texto.*;
+import iu.grafico.*;
 
 public class MainNineCardSiege {
 
 	public static void main(String[] args) {
-		TextUserInterface ui = new TextUserInterface(new Game());
-		ui.run();
+		//TextUserInterface ui = new TextUserInterface(new Game());
+		//ui.run();
+		
+		NineCardSiegeView GUI = new NineCardSiegeView(new ObservableGame());
 	}
 }
