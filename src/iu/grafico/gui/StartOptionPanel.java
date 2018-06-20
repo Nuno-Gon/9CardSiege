@@ -31,7 +31,7 @@ public class StartOptionPanel extends JPanel implements Observer{
 	private void setupLayout()
     {
         setLayout(new BoxLayout(this,BoxLayout.Y_AXIS));
-        
+        setLayout(new FlowLayout());
         iniciar.setAlignmentX(Component.CENTER_ALIGNMENT);
         sair.setAlignmentX(Component.CENTER_ALIGNMENT);
         

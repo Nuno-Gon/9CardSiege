@@ -68,7 +68,7 @@ public class NineCardSiegeView extends JFrame implements Observer{
 	      exitObjJMI.addActionListener(new ActionListener(){
 	            @Override
 	            public void actionPerformed(ActionEvent e) {
-	                 JOptionPane.showMessageDialog(NineCardSiegeView.this, "Fechou o Jogo","Sair",JOptionPane.PLAIN_MESSAGE);
+	                 JOptionPane.showMessageDialog(NineCardSiegeView.this, "Game Exit!","Exit",JOptionPane.PLAIN_MESSAGE);
 	                 System.exit(0);
 	            }
 	        });
