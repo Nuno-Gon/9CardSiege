@@ -25,9 +25,8 @@ public class ButtonsPanel extends JPanel implements Observer {
     private JButton tunnelMovementButton;
     private JButton supplyRaidButton;
     private JButton sabotageButton;
-    private JPanel playerActionButtons;
-    
     private JButton nextCardButton;
+    private JPanel playerActionButtons;
     
     private JButton towerButton;
     private JButton ramButton;
@@ -126,4 +125,18 @@ public class ButtonsPanel extends JPanel implements Observer {
             }
          });
     }
+    
+    private void setPlayerActionButtons() {
+    	attackButtons.addMouseListener(new ButtonMouseListener(archersAttackButton));
+    	boilingWaterAttackButton.addMouseListener(new ButtonMouseListener(boilingWaterAttackButton));
+        closeCombatButton.addMouseListener(new ButtonMouseListener(closeCombatButton));
+        coupureButton.addMouseListener(new ButtonMouseListener(coupureButton));
+        rallyTropsButton.addMouseListener(new ButtonMouseListener(rallyTropsButton));
+        tunnelMovementButton.addMouseListener(new ButtonMouseListener(tunnelMovementButton));
+        supplyRaidButton.addMouseListener(new ButtonMouseListener(supplyRaidButton));
+        sabotageButton.addMouseListener(new ButtonMouseListener(sabotageButton));
+        nextCardButton.addMouseListener(new ButtonMouseListener(nextCardButton));
+    }
+    
+    
 }
