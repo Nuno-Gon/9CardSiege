@@ -14,9 +14,10 @@ import logicaEstados.*;
 public class NineCardSiegeGamePanel extends JPanel implements Observer{
 	private ObservableGame game;
 	private StartOptionPanel startOptionPanel;
-	//EnemyTrackPanel enemyTrackPanel;
+	EnemyTrackPanel enemyTrackPanel;
 	StatusCardPanel statusCardPanel;
-	//CardSelected cardSelected;
+	CSelected cardSelected;
+	
 	private JPanel pNorth, pCenter, pCenterLeft, pCenterRight, pSouth, pSouthLeft, pSouthCenter, pSouthRight, pWest, pEast;
 	private Image background;
 	
@@ -30,6 +31,9 @@ public class NineCardSiegeGamePanel extends JPanel implements Observer{
 	private void setupComponents(){
 		startOptionPanel = new StartOptionPanel(game);
 		startOptionPanel.setPreferredSize(new Dimension(450,0));
+		
+		enemyTrackPanel = new EnemyTrackPanel(game);
+		enemyTrackPanel.setPreferredSize(new Dimension(450,0));
     
 		statusCardPanel = new StatusCardPanel(game);
         statusCardPanel.setPreferredSize(new Dimension(450,0));
@@ -51,14 +55,13 @@ public class NineCardSiegeGamePanel extends JPanel implements Observer{
       
      
         //pNorth.add(logo);
-        //pCenterLeft.add(cSelected);
-        
-       // pCenterRight.add(gameButtons);
+       pCenterLeft.add(cSelected);
+        pCenterRight.add(gameButtons);
        
 
        // pSouth.add(cards);
 
-       	//pWest.add(enemyTracksPanel, BorderLayout.WEST);
+       	pWest.add(enemyTrackPanel, BorderLayout.WEST);
         pEast.add(statusCardPanel, BorderLayout.EAST);
 
 

@@ -47,7 +47,7 @@ public class ObservableGame extends Observable{
         return game.getGameData().getRight_siege();
     }
       
-    public int getTrincheiras(){
+    public int getTrebuchet(){
         return game.getGameData().getTrebuchet();
     }  
     
