@@ -15,7 +15,7 @@ public interface IStates {
 /****** PlayerActions *****/
     //IStates playerActions(int escolha, int alvo);
     IStates checkAbilityPoints(int turn);
-    IStates skipCard(int turn);
+    IStates skipCard();
     IStates archersAttack();
     IStates boillingWater();
     IStates closeCombat();

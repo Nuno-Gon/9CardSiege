@@ -53,7 +53,7 @@ public class GameData implements Serializable {
 	public int[] setActionCalls;
 	
 	public GameData() {
-		day = 1;
+		day = 0;
 		choice = 0;
 		turn = 1;
 		secondChoice = 0;

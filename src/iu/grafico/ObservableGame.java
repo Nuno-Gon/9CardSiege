@@ -77,4 +77,25 @@ public class ObservableGame extends Observable{
     	setChanged();
         notifyObservers();
     }
+    
+    public void actionSupplyRaid() {
+    	game.SupplyRaid();
+    	
+    	setChanged();
+    	notifyObservers();
+    }
+    
+    public void actionSabotage() {
+    	game.Sabotage();
+    	
+    	setChanged();
+    	notifyObservers();
+    }
+    
+    public void actionSkipCard() {
+    	game.SkipCard();
+    	
+    	setChanged();
+    	notifyObservers();
+    }
 }

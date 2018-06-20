@@ -2,13 +2,20 @@ package iu.grafico.gui;
 
 import iu.grafico.ObservableGame;
 import java.util.*;
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.GridBagLayout;
+import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.imageio.ImageIO;
 import java.io.IOException;
 import logicaJogo.*;
-import logicaEstados.AwaitBeginning;
 import logicaEstados.*;
 
 public class NineCardSiegeGamePanel extends JPanel implements Observer{
@@ -54,7 +61,7 @@ public class NineCardSiegeGamePanel extends JPanel implements Observer{
      
       	//pNorth.add(logo);
       	pCenterLeft.add(cardSelected);
-      	pCenterRight.add(gameButtons);
+      	//pCenterRight.add(gameButtons);
        
 
       	// pSouth.add(cards);

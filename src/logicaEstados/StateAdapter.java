@@ -50,7 +50,7 @@ public class StateAdapter implements IStates, Serializable {
 	}
 	
 	@Override
-	public IStates skipCard(int turn) {
+	public IStates skipCard() {
 		return this;
 	}
 	

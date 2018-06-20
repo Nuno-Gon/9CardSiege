@@ -6,8 +6,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 import java.util.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import java.io.*;
 import logicaEstados.*;
@@ -62,7 +60,7 @@ public class ButtonsPanel extends JPanel implements Observer {
     	
     	setPreferredSize(new Dimension(330,500));
     	setBackground(Color.darkGray);
-    	setVisible(game.getState() instanceof AwaitTopCard || game.getState() instanceof AwaitPlayerAction);
+    	setVisible(game.getState() instanceof AwaitTopCard || game.getState() instanceof AwaitPlayerActions);
     }
     
     private void setupComponents() {
@@ -138,7 +136,7 @@ public class ButtonsPanel extends JPanel implements Observer {
         nextCardButton.addMouseListener(new ButtonMouseListener(nextCardButton));
     }
     
-    private void setPlayerActionsButtonsListeners() {
+    private void setPlayerActionButtonsListeners() {
     	archersAttackButton.addActionListener(new ActionListener() {
     		@Override
     		public void actionPerformed(ActionEvent event) {
@@ -160,6 +158,41 @@ public class ButtonsPanel extends JPanel implements Observer {
 				game.actionCoupure();
 			}
 		});
-    	rallyTroopsButton.addActionListener(new)
+    	rallyTroopsButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent event) {				
+			}
+		});
+    	tunnelMovementButton.addActionListener(new ActionListener() {			
+			@Override
+			public void actionPerformed(ActionEvent event) {				
+			}
+		});
+    	supplyRaidButton.addActionListener(new ActionListener() {			
+			@Override
+			public void actionPerformed(ActionEvent event) {
+				game.actionSupplyRaid();
+			}
+		});
+    	sabotageButton.addActionListener(new ActionListener() {			
+			@Override
+			public void actionPerformed(ActionEvent event) {
+				game.actionSabotage();				
+			}
+		});
+    	nextCardButton.addActionListener(new ActionListener() {			
+			@Override
+			public void actionPerformed(ActionEvent event) {
+				game.actionSkipCard();
+			}
+		});
     }
+
+	@Override
+	public void update(Observable o, Object arg) {
+		setVisible(game.getState() instanceof AwaitPlayerActions || game.getState() instanceof AwaitTopCard);
+        revalidate();
+        repaint();
+	}
+    
 }

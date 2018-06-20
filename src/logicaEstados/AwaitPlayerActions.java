@@ -48,8 +48,8 @@ public class AwaitPlayerActions extends StateAdapter {
 	}
 	
 	@Override
-	public IStates skipCard(int turn) {
-		gameData.setCardSelected(gameData.getCardsList().get(turn + 1));
+	public IStates skipCard() {
+		gameData.setCardSelected(gameData.getCardsList().get(gameData.getTurn() + 1));
 		return new AwaitWinOrLossCheck(gameData);
 	}
 	

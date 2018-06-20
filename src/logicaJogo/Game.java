@@ -68,8 +68,8 @@ public class Game implements Serializable{
 	    	setState(getState().checkAbilityPoints(turn));
 	    }
 	    
-	    public void SkipCard(int turn) {
-	    	setState(getState().skipCard(turn));
+	    public void SkipCard() {
+	    	setState(getState().skipCard());
 	    }
 	    
 	    public void ArchersAttack() {
