@@ -14,10 +14,10 @@ import logicaEstados.*;
 public class NineCardSiegeGamePanel extends JPanel implements Observer{
 	private ObservableGame game;
 	private StartOptionPanel startOptionPanel;
-	EnemyTrackPanel enemyTrackPanel;
-	StatusCardPanel statusCardPanel;
-	CSelected cardSelected;
-	
+	private EnemyTrackPanel enemyTrackPanel;
+	private StatusCardPanel statusCardPanel;
+	private CSelected cardSelected;
+	private ButtonsPanel gameButtons;
 	private JPanel pNorth, pCenter, pCenterLeft, pCenterRight, pSouth, pSouthLeft, pSouthCenter, pSouthRight, pWest, pEast;
 	private Image background;
 	
@@ -41,28 +41,26 @@ public class NineCardSiegeGamePanel extends JPanel implements Observer{
 	
 	private void setupLayout()
     {
+		setLayout(new BorderLayout());
+		setBackground(Color.darkGray);
       
       
-      setLayout(new BorderLayout());
-      setBackground(Color.darkGray);
-      
-      
-      setupNorth();
-      setupCenter();
-      setupSouth();
-      setupEast();
-      setupWest();
-      
+		setupNorth();
+		setupCenter();
+      	setupSouth();
+      	setupEast();
+      	setupWest();
+      	
      
-        //pNorth.add(logo);
-       pCenterLeft.add(cSelected);
-        pCenterRight.add(gameButtons);
+      	//pNorth.add(logo);
+      	pCenterLeft.add(cardSelected);
+      	pCenterRight.add(gameButtons);
        
 
-       // pSouth.add(cards);
+      	// pSouth.add(cards);
 
-       	pWest.add(enemyTrackPanel, BorderLayout.WEST);
-        pEast.add(statusCardPanel, BorderLayout.EAST);
+      	pWest.add(enemyTrackPanel, BorderLayout.WEST);
+      	pEast.add(statusCardPanel, BorderLayout.EAST);
 
 
 
@@ -75,7 +73,7 @@ public class NineCardSiegeGamePanel extends JPanel implements Observer{
         add(pWest, BorderLayout.WEST);
 
         //add(mainPanel, BorderLayout.CENTER);
-       validate();
+        validate();
     }
 	
 	// Setup Panels
