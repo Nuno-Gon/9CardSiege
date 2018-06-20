@@ -44,6 +44,12 @@ public class NineCardSiegeGamePanel extends JPanel implements Observer{
     
 		statusCardPanel = new StatusCardPanel(game);
         statusCardPanel.setPreferredSize(new Dimension(450,0));
+
+        gameButtons = new ButtonsPanel(game);
+        gameButtons.setPreferredSize(new Dimension(450,0));
+        
+        cardSelected = new CSelected(game);
+        cardSelected.setPreferredSize(new Dimension(450,0));
 	}
 	
 	private void setupLayout()
@@ -61,7 +67,7 @@ public class NineCardSiegeGamePanel extends JPanel implements Observer{
      
       	//pNorth.add(logo);
       	pCenterLeft.add(cardSelected);
-      	//pCenterRight.add(gameButtons);
+      	pCenterRight.add(gameButtons);
        
 
       	// pSouth.add(cards);

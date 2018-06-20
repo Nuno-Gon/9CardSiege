@@ -125,7 +125,7 @@ public class ButtonsPanel extends JPanel implements Observer {
     }
     
     private void setPlayerActionButtons() {
-    	attackButtons.addMouseListener(new ButtonMouseListener(archersAttackButton));
+    	archersAttackButton.addMouseListener(new ButtonMouseListener(archersAttackButton));
     	boillingWaterAttackButton.addMouseListener(new ButtonMouseListener(boillingWaterAttackButton));
         closeCombatButton.addMouseListener(new ButtonMouseListener(closeCombatButton));
         coupureButton.addMouseListener(new ButtonMouseListener(coupureButton));
