@@ -18,10 +18,10 @@ public class ButtonsPanel extends JPanel implements Observer {
 	private JButton resolve, resolve2cards, b1, b2;
 	
 	private JButton archersAttackButton;
-	private JButton boilingWaterAttackButton;
+	private JButton boillingWaterAttackButton;
     private JButton closeCombatButton;
     private JButton coupureButton;
-    private JButton rallyTropsButton;
+    private JButton rallyTroopsButton;
     private JButton tunnelMovementButton;
     private JButton supplyRaidButton;
     private JButton sabotageButton;
@@ -82,14 +82,14 @@ public class ButtonsPanel extends JPanel implements Observer {
         playerActionButtons.setLayout(new GridLayout(4,2));
         archersAttackButton = new JButton("Archers Attack");
         archersAttackButton.setBackground(Color.cyan);
-        boilingWaterAttackButton = new JButton("Boiling Water Attack");
-        boilingWaterAttackButton.setBackground(Color.cyan);
+        boillingWaterAttackButton = new JButton("Boilling Water Attack");
+        boillingWaterAttackButton.setBackground(Color.cyan);
         closeCombatButton = new JButton("Close Combat");
         closeCombatButton.setBackground(Color.cyan);
         coupureButton = new JButton("Coupure");
         coupureButton.setBackground(Color.cyan);
-        rallyTropsButton = new JButton("Rally Trops");
-        rallyTropsButton.setBackground(Color.cyan);
+        rallyTroopsButton = new JButton("Rally Troops");
+        rallyTroopsButton.setBackground(Color.cyan);
         tunnelMovementButton = new JButton("Tunnel Movement");
         tunnelMovementButton.setBackground(Color.cyan);
         supplyRaidButton = new JButton("Supply Raid");
@@ -98,10 +98,10 @@ public class ButtonsPanel extends JPanel implements Observer {
         sabotageButton.setBackground(Color.cyan);
         
         playerActionButtons.add(archersAttackButton);
-        playerActionButtons.add(boilingWaterAttackButton);
+        playerActionButtons.add(boillingWaterAttackButton);
         playerActionButtons.add(closeCombatButton);
         playerActionButtons.add(coupureButton);
-        playerActionButtons.add(rallyTropsButton);
+        playerActionButtons.add(rallyTroopsButton);
         playerActionButtons.add(tunnelMovementButton);
         playerActionButtons.add(supplyRaidButton);
         playerActionButtons.add(sabotageButton);
@@ -128,15 +128,38 @@ public class ButtonsPanel extends JPanel implements Observer {
     
     private void setPlayerActionButtons() {
     	attackButtons.addMouseListener(new ButtonMouseListener(archersAttackButton));
-    	boilingWaterAttackButton.addMouseListener(new ButtonMouseListener(boilingWaterAttackButton));
+    	boillingWaterAttackButton.addMouseListener(new ButtonMouseListener(boillingWaterAttackButton));
         closeCombatButton.addMouseListener(new ButtonMouseListener(closeCombatButton));
         coupureButton.addMouseListener(new ButtonMouseListener(coupureButton));
-        rallyTropsButton.addMouseListener(new ButtonMouseListener(rallyTropsButton));
+        rallyTroopsButton.addMouseListener(new ButtonMouseListener(rallyTroopsButton));
         tunnelMovementButton.addMouseListener(new ButtonMouseListener(tunnelMovementButton));
         supplyRaidButton.addMouseListener(new ButtonMouseListener(supplyRaidButton));
         sabotageButton.addMouseListener(new ButtonMouseListener(sabotageButton));
         nextCardButton.addMouseListener(new ButtonMouseListener(nextCardButton));
     }
     
-    
+    private void setPlayerActionsButtonsListeners() {
+    	archersAttackButton.addActionListener(new ActionListener() {
+    		@Override
+    		public void actionPerformed(ActionEvent event) {
+    		}
+		});
+    	boillingWaterAttackButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent event) {				
+			}
+		});
+    	closeCombatButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent event) {				
+			}
+		});
+    	coupureButton.addActionListener(new ActionListener() {			
+			@Override
+			public void actionPerformed(ActionEvent event) {	
+				game.actionCoupure();
+			}
+		});
+    	rallyTroopsButton.addActionListener(new)
+    }
 }

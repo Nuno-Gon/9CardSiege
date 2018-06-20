@@ -70,4 +70,11 @@ public class ObservableGame extends Observable{
     public int getRaidSupplies() {
         return game.getGameData().getSupplies();
     }
+    
+    public void actionCoupure(){
+    	game.Coupure();
+    	
+    	setChanged();
+        notifyObservers();
+    }
 }
