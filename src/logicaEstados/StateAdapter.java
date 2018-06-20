@@ -20,7 +20,7 @@ public class StateAdapter implements IStates, Serializable {
 	}
 	
 	@Override
-	public IStates start(int day) {
+	public IStates start() {
 		return this;
 	}
 	
@@ -171,6 +171,17 @@ public class StateAdapter implements IStates, Serializable {
 	
 	@Override
 	public IStates endOfDay() {
+		return this;
+	}
+
+	@Override
+	public void quit() {
+		System.exit(0);
+		
+	}
+
+	@Override
+	public IStates playAgain() {
 		return this;
 	}
 }
