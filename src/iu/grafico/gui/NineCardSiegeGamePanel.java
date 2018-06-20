@@ -11,5 +11,23 @@ import logicaEstados.*;
 
 public class NineCardSiegeGamePanel extends JPanel implements Observer{
 	ObservableGame game;
-	Start
+	StartOptionPanel startOptionPanel;
+	//EnemyTrackPanel enemyTrackPanel;
+	//StatusCardPanel statusCardPanel;
+	//CardSelected cardSelected;
+	JPanel pNorth, pCenter, pCenterLeft, pCenterRight, pSouth, pSouthLeft, pSouthCenter, pSouthRight, pWest, pEast;
+	
+	public NineCardSiegeGamePanel(ObservableGame game){
+		this.game = game;
+		
+		//setupComponents();
+		//setupLayout();
+	}
+	
+	@Override
+    public void update(Observable o, Object arg) {
+        setBackground(Color.blue);
+        revalidate();
+        repaint();
+    }
 }
