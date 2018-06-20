@@ -1,8 +1,6 @@
 package iu.grafico.gui;
 
 import iu.grafico.ObservableGame;
-import logicaJogo.estados.AwaitBeginning;
-
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,6 +9,7 @@ import javax.swing.*;
 import java.util.*;
 import javax.imageio.ImageIO;
 import java.io.*;
+import logicaEstados.*;
 
 public class StartOptionPanel extends JPanel implements Observer{
 
@@ -72,7 +71,7 @@ public class StartOptionPanel extends JPanel implements Observer{
 	
 	@Override
     public void update(Observable o, Object arg) {
-        setVisible(game.getEstado() instanceof AwaitBeginning);
+        setVisible(game.getState() instanceof AwaitBeginning);
         revalidate();
         repaint();
     }

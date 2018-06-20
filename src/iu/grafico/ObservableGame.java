@@ -17,7 +17,7 @@ public class ObservableGame extends Observable{
 	}
 	
 	public void setGame(Game game){
-this.game = game;
+		this.game = game;
 		
 		setChanged();
 		notifyObservers();
@@ -27,3 +27,11 @@ this.game = game;
 		return game.getState();
 	}
 	
+	public void ResolveStart()
+    {
+        game.ResolveStart();
+       
+        setChanged();
+        notifyObservers();
+    }
+}

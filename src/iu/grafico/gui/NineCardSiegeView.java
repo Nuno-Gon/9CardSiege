@@ -31,7 +31,7 @@ public class NineCardSiegeView extends JFrame implements Observer{
 		game = observableGame;
 		game.addObserver(this);
 		
-		panel = new CardSiegeGamePanel(game);
+		panel = new NineCardSiegeGamePanel(game);
 		
 		addComponents();
 		//menu();
