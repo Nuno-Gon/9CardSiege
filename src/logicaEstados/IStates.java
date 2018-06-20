@@ -4,7 +4,7 @@ public interface IStates {
 
 /***** AwaitBeginning  *****/  
     
-	IStates start(int day);
+	IStates start();
     IStates lineCheck();
     
 /****** Top Card ******/
@@ -52,6 +52,6 @@ public interface IStates {
     IStates endOfDay();
     
 /****** Quit *****/
-    IStates quit();
+    void quit();
     IStates playAgain();
 }

@@ -9,9 +9,9 @@ public class AwaitBeginning extends StateAdapter {
 	}
 	
 	@Override
-	public IStates start(int day) {
+	public IStates start() {
 		gameData.baralhaCartas();
-		gameData.setDay(day);
+		gameData.setDay(gameData.getDay() + 1);
 		return this;
 	}
 	

@@ -44,29 +44,19 @@ public class Game implements Serializable{
 	    	setState(getState().start());
 	    }
 	    
-	    /********** AwaitEnemyLineCheck *********/
-	    
-	    public void ResolveLineCheck(boolean i, boolean u) {
-	    	setState(getState().lineCheck(i, u));
+	    public void ResolveLineCheck() {
+	    	setState(getState().lineCheck());
 	    }
 	    
-	    public void ResolveAdvance() {
-	    	setState(getState().advance());
-	    }
-	    
-	    /********* AwaitCardSelection *********/
+	    /********* AwaitTopCard *********/
 	    
 	    public void ResolveCard() {
 	    	setState(getState().resolveCard());
 	    }
 	    
-	    /******** AwaitEventPhase **********/
-	    
 	    public void EventPhase() {
 	    	setState(getState().eventPhase());
 	    }
-	    
-	    /******** AwaitEnemyMovePhase ******/
 	    
 	    public void EnemyMovement() {
 	    	setState(getState().enemyMovement());
@@ -74,8 +64,48 @@ public class Game implements Serializable{
 	    
 	    /******* AwaitPlayerActions ******/
 	    
-	    public void PlayerActions(int escolha, int alvo) {
-	    	setState(getState().playerActions(escolha));
+	    public void CheckAbilityPoints(int turn) {
+	    	setState(getState().checkAbilityPoints(turn));
+	    }
+	    
+	    public void SkipCard(int turn) {
+	    	setState(getState().skipCard(turn));
+	    }
+	    
+	    public void ArchersAttack() {
+	    	setState(getState().archersAttack());
+	    }
+	    
+	    public void BoillingWater() {
+	    	setState(getState().boillingWater());
+	    }
+	    
+	    public void CloseCombat() {
+	    	setState(getState().closeCombat());
+	    }
+	    
+	    public void Coupure() {
+	    	setState(getState().coupure());
+	    }
+	    
+	    public void RallyTroops() {
+	    	setState(getState().rallyTroops());
+	    }
+	    
+	    public void TunnelMovement() {
+	    	setState(getState().tunnelMovement());
+	    }
+	    
+	    public void SupplyRaid() {
+	    	setState(getState().supplyRaid());
+	    }
+	    
+	    public void Sabotage() {
+	    	setState(getState().sabotage());
+	    }
+	    
+	    public void AdditionalActionPoints() {
+	    	setState(getState().additionalActionPoint());
 	    }
 	    
 	    public void NextState() {
@@ -83,8 +113,8 @@ public class Game implements Serializable{
 	    }
 	    
 	    /****** AwaitWinOrLossCheck ******/
-	    public void WinOrLossCheck(boolean wl) {
-	    	setState(getState().winOrLossCheck(wl));
+	    public void WinOrLossCheck() {
+	    	setState(getState().winOrLossCheck());
 	    }
 	    
 	    /****** AwaitEndOfDay ******/
