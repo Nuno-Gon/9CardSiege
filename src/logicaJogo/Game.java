@@ -44,11 +44,11 @@ public class Game implements Serializable{
 	    	setState(getState().start());
 	    }
 	    
+	    /********* AwaitTopCard *********/
+	    
 	    public void ResolveLineCheck() {
 	    	setState(getState().lineCheck());
 	    }
-	    
-	    /********* AwaitTopCard *********/
 	    
 	    public void ResolveCard() {
 	    	setState(getState().resolveCard());
