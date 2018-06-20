@@ -9,6 +9,7 @@ public class GameData implements Serializable {
 	private int dice;
 	public Events evAtual;
 	public PlayerActions action;
+	private Cards cardSelected;
 	private int choice; // 0 - nada 1 - esquerda 2 - meio 3 - direita
 	private int actionP; // action points
 	private int freeMovement; // inicia a 0, fica a 1 depois de usado
@@ -110,6 +111,18 @@ public class GameData implements Serializable {
 	}
 	
 	
+
+	public Cards getCardSelected() {
+		return cardSelected;
+	}
+
+
+
+	public void setCardSelected(Cards cardSelected) {
+		this.cardSelected = cardSelected;
+	}
+
+
 
 	public boolean isWrongOption() {
 		return wrongOption;

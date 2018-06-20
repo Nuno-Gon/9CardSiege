@@ -12,7 +12,7 @@ public interface IStates {
     IStates enemyMovement();
     
 /****** PlayerActions *****/
-    IStates playerActions(int escolha);
+    IStates playerActions(int escolha, int alvo);
     IStates nextState();
     
 /****** WinOrLossCheck *****/

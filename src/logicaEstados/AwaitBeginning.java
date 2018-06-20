@@ -9,40 +9,34 @@ public class AwaitBeginning extends StateAdapter {
 	}
 	
 	@Override
-	public IStates start(){
-	    //gameData.baralhaCartas();
-	    // gameData.lCheck(gameData.getTunnel());
-	    return new AwaitEnemyLineCheck(gameData);
-	}
-	
-	@Override
 	public IStates lineCheck(){
 		if(gameData.getTunnel() == 3) {
 			gameData.setDice(gameData.RollDice());
 			if(gameData.getDice() == 1) {
 				gameData.setTunnel(0);
-				// perdeu os soldados
+				gameData.setText("Your soldiers died on the enemy line");
 			}
 			else {
-				// soldados indetataveis
+				gameData.setText("Your soldiers were not detected");
 			}
 		}
 		else {
-			//sem soldados na linha inimiga
+			gameData.setText("You don't have soldiers on the enemy line");
 		}
-		return new AwaitBeginning(gameData);
+		return this;
 	}
 	
 	@Override
 	public IStates resolveCard() {
+		gameData.setCardSelected(gameData.getCardsList().get(0));
 		gameData.setEvAtual(gameData.getCardsList().get(0).getEvents(gameData.getDay()));
-		return new AwaitBeginning(gameData);
+		return this;
 	}
 	
 	@Override
 	public IStates eventPhase() {
 		gameData.getEvAtual().action(gameData);
-		return new AwaitBeginning(gameData);
+		return this;
 	}
 	
 	@Override

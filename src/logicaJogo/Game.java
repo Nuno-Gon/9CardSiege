@@ -75,7 +75,7 @@ public class Game implements Serializable{
 	    
 	    /******* AwaitPlayerActions ******/
 	    
-	    public void PlayerActions(int escolha) {
+	    public void PlayerActions(int escolha, int alvo) {
 	    	setState(getState().playerActions(escolha));
 	    }
 	    
