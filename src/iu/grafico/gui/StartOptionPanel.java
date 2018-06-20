@@ -18,6 +18,9 @@ public class StartOptionPanel extends JPanel implements Observer{
 	JButton iniciar = new JButton("Iniciar");
 	JButton sair = new JButton("Sair");
 	
+	String imageFiles ="imagens/paginaInicial.png";
+    Image home;
+	
 	StartOptionPanel(ObservableGame g) {
 		game = g;
 		game.addObserver(this);
@@ -31,7 +34,7 @@ public class StartOptionPanel extends JPanel implements Observer{
 	private void setupLayout()
     {
         setLayout(new BoxLayout(this,BoxLayout.Y_AXIS));
-        setLayout(new FlowLayout());
+        
         iniciar.setAlignmentX(Component.CENTER_ALIGNMENT);
         sair.setAlignmentX(Component.CENTER_ALIGNMENT);
         
@@ -42,10 +45,7 @@ public class StartOptionPanel extends JPanel implements Observer{
         add(sair);
         add(Box.createVerticalStrut(10));
        
-       
-   
-         validate();
-       
+        validate();
     }
      
      private void setupComponentes(){
@@ -69,6 +69,19 @@ public class StartOptionPanel extends JPanel implements Observer{
          
      }
 	
+     @Override
+     public void paintComponent(Graphics g)
+     {
+         super.paintComponent(g);
+         
+         try {
+             home = ImageIO.read(Resources.getResourceFile(imageFiles));
+         } catch (IOException ex) {
+             
+         }
+         g.drawImage(home,0,0,getWidth()-1,getHeight()-1,null);
+     }
+     
 	@Override
     public void update(Observable o, Object arg) {
         setVisible(game.getState() instanceof AwaitBeginning);
