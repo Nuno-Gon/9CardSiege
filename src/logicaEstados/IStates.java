@@ -4,7 +4,10 @@ public interface IStates {
 
 /***** AwaitBeginning  *****/  
     
+	IStates start(int day);
     IStates lineCheck();
+    
+/****** Top Card ******/
     IStates resolveCard();
     IStates eventPhase();
     IStates enemyMovement();
@@ -40,13 +43,15 @@ public interface IStates {
     IStates moveTunnelFreeCastle();
     IStates moveTunnelFastCastle();
     IStates moveTunnelFreeEnemyLine();
-    IStates moveTunnelFastEnemyLine();
-    
-    
+    IStates moveTunnelFastEnemyLine(); 
     
 /****** WinOrLossCheck *****/
-    IStates winOrLossCheck(boolean wl);
+    IStates winOrLossCheck();
     
 /****** EndOfDay *****/
     IStates endOfDay();
+    
+/****** Quit *****/
+    IStates quit();
+    IStates playAgain();
 }

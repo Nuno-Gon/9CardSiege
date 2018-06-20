@@ -7,6 +7,7 @@ public class GameData implements Serializable {
 	
 	private int day;
 	private int dice;
+	private int turn;
 	public Events evAtual;
 	public PlayerActions action;
 	private Cards cardSelected;
@@ -49,10 +50,12 @@ public class GameData implements Serializable {
 	
 	public List<Cards> cardsList;
 	public List<PlayerActions> actionsList;
+	public int[] setActionCalls;
 	
 	public GameData() {
 		day = 1;
 		choice = 0;
+		turn = 1;
 		secondChoice = 0;
 		actionP = 0;
 		freeMovement = 0;
@@ -111,6 +114,20 @@ public class GameData implements Serializable {
 		actionsList.add(new PA_Sabotage());
 		actionsList.add(new PA_AdditionalActionPoints());
 	}
+	
+	
+
+	public int getTurn() {
+		return turn;
+	}
+
+
+
+	public void setTurn(int turn) {
+		this.turn = turn;
+	}
+
+
 
 	public int getSecondChoice() {
 		return secondChoice;

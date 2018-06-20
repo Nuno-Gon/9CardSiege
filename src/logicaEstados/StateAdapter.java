@@ -20,17 +20,12 @@ public class StateAdapter implements IStates, Serializable {
 	}
 	
 	@Override
-	public IStates start(){
+	public IStates start(int day) {
 		return this;
 	}
 	
 	@Override
-	public IStates lineCheck(boolean i, boolean u){
-		return this;
-	} 
-	
-	@Override
-	public IStates advance() {
+	public IStates lineCheck() {
 		return this;
 	}
 	
@@ -50,22 +45,132 @@ public class StateAdapter implements IStates, Serializable {
 	}
 	
 	@Override
-	public IStates playerActions(int escolha) {
+	public IStates checkAbilityPoints(int turn) {
 		return this;
 	}
 	
 	@Override
-	public IStates winOrLossCheck(boolean wl) {
+	public IStates skipCard(int turn) {
+		return this;
+	}
+	
+	@Override
+	public IStates archersAttack() {
+		return this;
+	}
+	
+	@Override
+	public IStates boillingWater() {
+		return this;
+	}
+	
+	@Override
+	public IStates closeCombat() {
+		return this;
+	}
+	
+	@Override
+	public IStates coupure() {
+		return this;
+	}
+	
+	@Override
+	public IStates rallyTroops() {
+		return this;
+	}
+	
+	@Override
+	public IStates tunnelMovement() {
+		return this;
+	}
+	
+	@Override
+	public IStates supplyRaid() {
+		return this;
+	}
+	
+	@Override
+	public IStates sabotage() {
+		return this;
+	}
+	
+	@Override
+	public IStates additionalActionPoint() {
+		return this;
+	}
+	
+	@Override
+	public IStates nextState() {
+		return this;
+	}
+	
+	@Override
+	public IStates ladder() {
+		return this;
+	}
+	
+	@Override
+	public IStates ram() {
+		return this;
+	}
+	
+	@Override
+	public IStates tower() {
+		return this;
+	}
+	
+	@Override
+	public IStates cancel() {
+		return this;
+	}
+	
+	@Override
+	public IStates normalRally() {
+		return this;
+	}
+	
+	@Override
+	public IStates suppliesRally() {
+		return this;
+	}
+	
+	@Override
+	public IStates enterTunnelFree() {
+		return this;
+	}
+	
+	@Override
+	public IStates enterTunnelFast() {
+		return this;
+	}
+	
+	@Override
+	public IStates moveTunnelFreeCastle() {
+		return this;
+	}
+	
+	@Override
+	public IStates moveTunnelFastCastle() {
+		return this;
+	}
+	
+	@Override
+	public IStates moveTunnelFreeEnemyLine() {
+		return this;
+	}
+	
+	@Override
+	public IStates moveTunnelFastEnemyLine() {
+		return this;
+	}
+	
+	@Override
+	public IStates winOrLossCheck() {
 		return this;
 	}
 	
 	@Override
 	public IStates endOfDay() {
-		return this;
-	}
-
-	@Override
-	public IStates nextState() {
 		return this;
 	}
 }

@@ -19,12 +19,14 @@ public class AwaitEndOfDay extends StateAdapter {
 			gameData.setSupplies(0);
 		}
 		
-		if(gameData.getDay() == 3)
-			return this;
+		if(gameData.getDay() == 3) {
+			gameData.setChoice(2);
+			return new AwaitQuit(gameData);
+		}
 		else
 			gameData.setDay(gameData.getDay() + 1);
 		
-		return new AwaitBeginning(gameData);
+		return new AwaitTopCard(gameData);
 	}
 
 }
