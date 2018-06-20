@@ -63,4 +63,9 @@ public class StateAdapter implements IStates, Serializable {
 	public IStates endOfDay() {
 		return this;
 	}
+
+	@Override
+	public IStates nextState() {
+		return this;
+	}
 }

@@ -5,18 +5,10 @@ public interface IStates {
 /***** AwaitBeginning  *****/  
     
     IStates start();
-    
-/***** EnemyLineCheck *****/
-    IStates lineCheck(boolean i, boolean u);
+    IStates lineCheck();
     IStates advance();
-    
-/***** CardSelection *****/
     IStates resolveCard();
-    
-/****** EventPhase *******/
     IStates eventPhase();
-    
-/****** EnemyMovement *****/
     IStates enemyMovement();
     
 /****** PlayerActions *****/

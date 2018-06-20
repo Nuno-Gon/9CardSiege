@@ -12,6 +12,7 @@ public class Game implements Serializable{
 		public Game(){
 			
 			gameData = new GameData();
+			gameData.baralhaCartas();
 			state = new AwaitBeginning(gameData);
 			System.out.println("New Game");
 		}
