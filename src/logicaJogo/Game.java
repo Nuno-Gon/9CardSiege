@@ -64,8 +64,8 @@ public class Game implements Serializable{
 	    
 	    /******* AwaitPlayerActions ******/
 	    
-	    public void CheckAbilityPoints(int turn) {
-	    	setState(getState().checkAbilityPoints(turn));
+	    public void CheckAbilityPoints() {
+	    	setState(getState().checkAbilityPoints(gameData.getTurn()));
 	    }
 	    
 	    public void SkipCard() {

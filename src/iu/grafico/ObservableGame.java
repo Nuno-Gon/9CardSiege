@@ -34,6 +34,41 @@ public class ObservableGame extends Observable{
         notifyObservers();
     }
 	
+	public void EnemyLineCheck() {
+		game.ResolveLineCheck();
+		
+		setChanged();
+    	notifyObservers();
+	}
+	
+	public void TopCard() {
+		game.ResolveCard();
+		
+		setChanged();
+    	notifyObservers();
+	}
+	
+	public void Event() {
+		game.EventPhase();
+		
+		setChanged();
+    	notifyObservers();
+	}
+	
+	public void EnemyMov() {
+		game.EnemyMovement();
+		
+		setChanged();
+    	notifyObservers();
+	}
+	
+	public void CheckAP() {
+		game.CheckAbilityPoints();
+		
+		setChanged();
+    	notifyObservers();
+	}
+	
 	public int getLadder(){
         return game.getGameData().getLeft_ladder();
     }
@@ -91,6 +126,12 @@ public class ObservableGame extends Observable{
     	notifyObservers();
     }
     
+    public void actionAdditionalAP() {
+    	game.AdditionalActionPoints();
+    	
+    	setChanged();
+    	notifyObservers();
+    }
     public void actionSkipCard() {
     	game.SkipCard();
     	
