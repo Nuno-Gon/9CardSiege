@@ -5,7 +5,6 @@ import java.util.*;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
-import java.awt.FlowLayout;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.GridBagLayout;
@@ -26,14 +25,11 @@ public class NineCardSiegeGamePanel extends JPanel implements Observer{
 	private StatusCardPanel statusCardPanel;
 	private CSelected cardSelected;
 	private ButtonsPanel gameButtons;
-	private JPanel pNorth, pNorthRight, pCenter, pCenterLeft, pCenterRight, pSouth, pSouthLeft, pSouthCenter, pSouthRight, pWest, pEast;
-	private String imageName = "imagens/paginaInicial.png";
+	private JPanel pNorth, pCenter, pCenterLeft, pCenterRight, pSouth, pSouthLeft, pSouthCenter, pSouthRight, pWest, pEast;
 	private Image background;
 	
 	public NineCardSiegeGamePanel(ObservableGame game){
 		this.game = game;
-		
-		getBackgroundImg();
 		
 		setupComponents();
 		setupLayout();
@@ -50,10 +46,8 @@ public class NineCardSiegeGamePanel extends JPanel implements Observer{
         statusCardPanel.setPreferredSize(new Dimension(450,0));
 
         gameButtons = new ButtonsPanel(game);
-        gameButtons.setPreferredSize(new Dimension(450,0));
         
         cardSelected = new CSelected(game);
-        cardSelected.setPreferredSize(new Dimension(450,0));
 	}
 	
 	private void setupLayout()
@@ -75,7 +69,7 @@ public class NineCardSiegeGamePanel extends JPanel implements Observer{
        
 
       	// pSouth.add(cards);
-
+      	
       	pWest.add(enemyTrackPanel, BorderLayout.WEST);
       	pEast.add(statusCardPanel, BorderLayout.EAST);
 
@@ -93,27 +87,13 @@ public class NineCardSiegeGamePanel extends JPanel implements Observer{
         validate();
     }
 	
-	private void getBackgroundImg() {
-		try {
-			background = ImageIO.read(Resources.getResourceFile(imageName));
-			background = background.getScaledInstance(1, -1, 300);
-		} catch (IOException ex) {
-			
-		}
-	}
 	// Setup Panels
 	
 	private void setupNorth() {
         pNorth = new JPanel();
         pNorth.setOpaque(false);
         pNorth.setLayout(new BorderLayout());
-        pNorth.setBorder(new EmptyBorder(0, 45, 0, 0));
-        
-        pNorthRight = new JPanel();
-        pNorthRight.setLayout(new BoxLayout(pNorthRight, BoxLayout.Y_AXIS));
-        pNorthRight.setOpaque(false);
-        
-        pNorth.add(pNorthRight, BorderLayout.EAST);
+        //pNorth.setBorder(new EmptyBorder(0, 45, 0, 0));
     }
 
     private void setupCenter() {
