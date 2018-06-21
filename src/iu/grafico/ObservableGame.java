@@ -5,7 +5,6 @@ import logicaJogo.*;
 import java.util.*;
 
 public class ObservableGame extends Observable{
-	
 	Game game;
 	
 	public ObservableGame(){
