@@ -4,6 +4,9 @@ import java.util.*;
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
+import javax.swing.event.EventListenerList;
+import javax.swing.plaf.ComponentUI;
+import javax.accessibility.AccessibleContext;
 import javax.imageio.ImageIO;
 import java.io.IOException;
 import logicaJogo.*;
@@ -170,6 +173,30 @@ public class EnemyTrackPanel extends JPanel implements Observer {
 	public void setLoad(boolean load) {
 		this.load = load;
 	}
+	
+	public ComponentUI getUi() {
+        return ui;
+    }
+
+    public void setUi(ComponentUI ui) {
+        this.ui = ui;
+    }
+
+    public EventListenerList getListenerList() {
+        return listenerList;
+    }
+
+    public void setListenerList(EventListenerList listenerList) {
+        this.listenerList = listenerList;
+    }
+
+    public AccessibleContext getAccessibleContext() {
+        return accessibleContext;
+    }
+
+    public void setAccessibleContext(AccessibleContext accessibleContext) {
+        this.accessibleContext = accessibleContext;
+    }
 
 	@Override
 	public void update(Observable o, Object arg) {

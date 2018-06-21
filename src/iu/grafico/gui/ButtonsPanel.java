@@ -78,6 +78,7 @@ public class ButtonsPanel extends JPanel implements Observer {
         setLayout(new GridLayout(2,1));
         playerActionButtons = new JPanel();
         playerActionButtons.setLayout(new GridLayout(4,2));
+        playerActionButtons.setBackground(Color.white);
         archersAttackButton = new JButton("Archers Attack");
         archersAttackButton.setBackground(Color.cyan);
         boillingWaterAttackButton = new JButton("Boilling Water Attack");

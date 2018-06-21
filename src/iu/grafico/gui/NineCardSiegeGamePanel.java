@@ -5,6 +5,7 @@ import java.util.*;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
+import java.awt.FlowLayout;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.GridBagLayout;
@@ -25,11 +26,14 @@ public class NineCardSiegeGamePanel extends JPanel implements Observer{
 	private StatusCardPanel statusCardPanel;
 	private CSelected cardSelected;
 	private ButtonsPanel gameButtons;
-	private JPanel pNorth, pCenter, pCenterLeft, pCenterRight, pSouth, pSouthLeft, pSouthCenter, pSouthRight, pWest, pEast;
+	private JPanel pNorth, pNorthRight, pCenter, pCenterLeft, pCenterRight, pSouth, pSouthLeft, pSouthCenter, pSouthRight, pWest, pEast;
+	private String imageName = "imagens/paginaInicial.png";
 	private Image background;
 	
 	public NineCardSiegeGamePanel(ObservableGame game){
 		this.game = game;
+		
+		getBackgroundImg();
 		
 		setupComponents();
 		setupLayout();
@@ -89,6 +93,14 @@ public class NineCardSiegeGamePanel extends JPanel implements Observer{
         validate();
     }
 	
+	private void getBackgroundImg() {
+		try {
+			background = ImageIO.read(Resources.getResourceFile(imageName));
+			background = background.getScaledInstance(1, -1, 300);
+		} catch (IOException ex) {
+			
+		}
+	}
 	// Setup Panels
 	
 	private void setupNorth() {
@@ -96,6 +108,12 @@ public class NineCardSiegeGamePanel extends JPanel implements Observer{
         pNorth.setOpaque(false);
         pNorth.setLayout(new BorderLayout());
         pNorth.setBorder(new EmptyBorder(0, 45, 0, 0));
+        
+        pNorthRight = new JPanel();
+        pNorthRight.setLayout(new BoxLayout(pNorthRight, BoxLayout.Y_AXIS));
+        pNorthRight.setOpaque(false);
+        
+        pNorth.add(pNorthRight, BorderLayout.EAST);
     }
 
     private void setupCenter() {

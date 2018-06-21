@@ -46,8 +46,10 @@ public class CSelected extends JPanel implements Observer {
         ImageIcon icon = null;
         Icon newicon = null;
         String imgPath = "";
-    
+        System.out.println("" + game.getGame().getGameData().getCardSelected().getNum());
+        
         switch(game.getGame().getGameData().getCardSelected().getNum()) {
+       
         case 1:
             imgPath = "imagens/card1.png";
             break;

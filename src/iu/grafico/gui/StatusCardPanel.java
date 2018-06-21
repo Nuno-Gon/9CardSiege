@@ -13,7 +13,7 @@ import logicaEstados.*;
 public class StatusCardPanel extends JPanel implements Observer {
 
     ObservableGame game;
-    String imageFiles[] ={"imagens/statusCard.PNG","imagens/piaoVerde.png","imagens/piaoPreto.png","imagens/piaoAmarelo.png"};
+    String imageFiles[] ={"imagens/statusCard.png","imagens/piaoVerde.png","imagens/piaoPreto.png","imagens/piaoAmarelo.png"};
     Image imagem[]= new Image[imageFiles.length];
     boolean loaded = false;
     
